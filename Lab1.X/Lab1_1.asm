@@ -6,7 +6,7 @@ List p=18f4520
 	x1 = 0x04
 	x2 = 0x02
 	y1 = 0x0A
-	y2 = 0x04
+	y2 = 0x03
 	
 	;//x1
 	MOVLW x1; WREG = x1
