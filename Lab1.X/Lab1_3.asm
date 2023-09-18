@@ -3,7 +3,7 @@ List p=18f4520
         CONFIG OSC = INTIO67
         CONFIG WDT = OFF
         org 0x00
-	input = b'01100010'
+	input = b'11111111'
 	
 	;Normal Binary to Gray Code
 	
@@ -12,7 +12,10 @@ List p=18f4520
 	MOVWF 0x00; [0x00] = input
 
 	RRNCF 0x00, 0; WREG = [0x00] right rotate
-	BCF WREG, 7; reset WREG[7] => complete right shift
+	MOVWF 0x13; [0x13] =  [0x00] right rotate
+	;BCF WREG, 7; reset WREG[7] => complete right shift
+	MOVLW b'01111111'
+	ANDWF 0x13, 0; WREG = [0x13] & b'01111111'
 	MOVWF 0x10; [0x10] = input shift right
 	
 	;xor == a'b + ab' => a == input, b == input shift right

@@ -25,7 +25,7 @@ List p=18f4520
     
 	phase2:
         ;//rightward rotate
-	RRNCF 0x000; 
+	RRNCF 0x00; 
 	;//Compare
 	MOVLW num1
 	CPFSEQ 0x00

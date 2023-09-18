@@ -1,4 +1,4 @@
-MPASM 5.84                        LAB1_3.ASM   9-14-2023  2:53:49         PAGE  1
+MPASM 5.84                        LAB1_3.ASM   9-14-2023  15:44:54         PAGE  1
 
 
 LOC  OBJECT CODE     LINE SOURCE TEXT
@@ -21,34 +21,37 @@ Warning[205]: Found directive in column 1. (List)
                       00004         CONFIG WDT = OFF
                       00005         org 0x00
 Warning[207]: Found label after column 1. (input)
-  00000062            00006         input = b'01100010'
+  000000FF            00006         input = b'11111111'
                       00007         
                       00008         ;Normal Binary to Gray Code
                       00009         
                       00010         ;initialize
-000000 0E62           00011         MOVLW input
+000000 0EFF           00011         MOVLW input
 000002 6E00           00012         MOVWF 0x00; [0x00] = input
                       00013 
 000004 4000           00014         RRNCF 0x00, 0; WREG = [0x00] right rotate
-000006 9EE8           00015         BCF WREG, 7; reset WREG[7] => complete right shift
-000008 6E10           00016         MOVWF 0x10; [0x10] = input shift right
-                      00017         
-                      00018         ;xor == a'b + ab' => a == input, b == input shift right
-00000A 1C00           00019         COMF 0x00, 0
-00000C 6E01           00020         MOVWF 0x01; [0x01] = WREG = a'
-00000E 1410           00021         ANDWF 0x10, 0
-000010 6E02           00022         MOVWF 0x02; [0x02] = WREG = a'b
-                      00023         
-000012 1C10           00024         COMF 0x10, 0
-000014 6E11           00025         MOVWF 0x11; [0x11] = WREG = b'
-000016 1400           00026         ANDWF 0x00, 0
-000018 6E12           00027         MOVWF 0x12; [0x02] = WREG = ab'
-                      00028         
-00001A 1002           00029         IORWF 0x02, 0; WREG = WREG(ab') OR [0x02](a'b)
-00001C 6E01           00030         MOVWF 0x01; store the result
+000006 6E13           00015         MOVWF 0x13; [0x13] =  [0x00] right rotate
+                      00016         ;BCF WREG, 7; reset WREG[7] => complete right shift
+000008 0E7F           00017         MOVLW b'01111111'
+00000A 1413           00018         ANDWF 0x13, 0; WREG = [0x13] & b'01111111'
+00000C 6E10           00019         MOVWF 0x10; [0x10] = input shift right
+                      00020         
+                      00021         ;xor == a'b + ab' => a == input, b == input shift right
+00000E 1C00           00022         COMF 0x00, 0
+000010 6E01           00023         MOVWF 0x01; [0x01] = WREG = a'
+000012 1410           00024         ANDWF 0x10, 0
+000014 6E02           00025         MOVWF 0x02; [0x02] = WREG = a'b
+                      00026         
+000016 1C10           00027         COMF 0x10, 0
+000018 6E11           00028         MOVWF 0x11; [0x11] = WREG = b'
+00001A 1400           00029         ANDWF 0x00, 0
+00001C 6E12           00030         MOVWF 0x12; [0x02] = WREG = ab'
                       00031         
-                      00032         end
-MPASM 5.84                        LAB1_3.ASM   9-14-2023  2:53:49         PAGE  2
+00001E 1002           00032         IORWF 0x02, 0; WREG = WREG(ab') OR [0x02](a'b)
+000020 6E01           00033         MOVWF 0x01; store the result
+                      00034         
+                      00035         end
+MPASM 5.84                        LAB1_3.ASM   9-14-2023  15:44:54         PAGE  2
 
 
 SYMBOL TABLE
@@ -107,7 +110,7 @@ BCLIP                             00000003
 BF                                00000000
 BGST                              00000005
 BOR                               00000000
-MPASM 5.84                        LAB1_3.ASM   9-14-2023  2:53:49         PAGE  3
+MPASM 5.84                        LAB1_3.ASM   9-14-2023  15:44:54         PAGE  3
 
 
 SYMBOL TABLE
@@ -166,7 +169,7 @@ CLKO                              00000006
 CM0                               00000000
 CM1                               00000001
 CM2                               00000002
-MPASM 5.84                        LAB1_3.ASM   9-14-2023  2:53:49         PAGE  4
+MPASM 5.84                        LAB1_3.ASM   9-14-2023  15:44:54         PAGE  4
 
 
 SYMBOL TABLE
@@ -225,7 +228,7 @@ FLTS                              00000002
 FREE                              00000004
 FSR0                              00000000
 FSR0H                             00000FEA
-MPASM 5.84                        LAB1_3.ASM   9-14-2023  2:53:49         PAGE  5
+MPASM 5.84                        LAB1_3.ASM   9-14-2023  15:44:54         PAGE  5
 
 
 SYMBOL TABLE
@@ -284,7 +287,7 @@ INT2P                             00000007
 INTCON                            00000FF2
 INTCON2                           00000FF1
 INTCON3                           00000FF0
-MPASM 5.84                        LAB1_3.ASM   9-14-2023  2:53:49         PAGE  6
+MPASM 5.84                        LAB1_3.ASM   9-14-2023  15:44:54         PAGE  6
 
 
 SYMBOL TABLE
@@ -343,7 +346,7 @@ LATD4                             00000004
 LATD5                             00000005
 LATD6                             00000006
 LATD7                             00000007
-MPASM 5.84                        LAB1_3.ASM   9-14-2023  2:53:49         PAGE  7
+MPASM 5.84                        LAB1_3.ASM   9-14-2023  15:44:54         PAGE  7
 
 
 SYMBOL TABLE
@@ -402,7 +405,7 @@ P                                 00000004
 P1A                               00000002
 P1B                               00000005
 P1C                               00000006
-MPASM 5.84                        LAB1_3.ASM   9-14-2023  2:53:49         PAGE  8
+MPASM 5.84                        LAB1_3.ASM   9-14-2023  15:44:54         PAGE  8
 
 
 SYMBOL TABLE
@@ -461,7 +464,7 @@ PROD                              00000FF3
 PRODH                             00000FF4
 PRODL                             00000FF3
 PRSEN                             00000007
-MPASM 5.84                        LAB1_3.ASM   9-14-2023  2:53:49         PAGE  9
+MPASM 5.84                        LAB1_3.ASM   9-14-2023  15:44:54         PAGE  9
 
 
 SYMBOL TABLE
@@ -520,7 +523,7 @@ RCIE                              00000005
 RCIF                              00000005
 RCIP                              00000005
 RCMT                              00000006
-MPASM 5.84                        LAB1_3.ASM   9-14-2023  2:53:49         PAGE 10
+MPASM 5.84                        LAB1_3.ASM   9-14-2023  15:44:54         PAGE 10
 
 
 SYMBOL TABLE
@@ -579,7 +582,7 @@ SSPBUF                            00000FC9
 SSPCON1                           00000FC6
 SSPCON2                           00000FC5
 SSPEN                             00000005
-MPASM 5.84                        LAB1_3.ASM   9-14-2023  2:53:49         PAGE 11
+MPASM 5.84                        LAB1_3.ASM   9-14-2023  15:44:54         PAGE 11
 
 
 SYMBOL TABLE
@@ -638,7 +641,7 @@ T3CKPS1                           00000005
 T3CON                             00000FB1
 T3SYNC                            00000002
 TABLAT                            00000FF5
-MPASM 5.84                        LAB1_3.ASM   9-14-2023  2:53:49         PAGE 12
+MPASM 5.84                        LAB1_3.ASM   9-14-2023  15:44:54         PAGE 12
 
 
 SYMBOL TABLE
@@ -697,7 +700,7 @@ TRISA7                            00000007
 TRISB                             00000F93
 TRISB0                            00000000
 TRISB1                            00000001
-MPASM 5.84                        LAB1_3.ASM   9-14-2023  2:53:49         PAGE 13
+MPASM 5.84                        LAB1_3.ASM   9-14-2023  15:44:54         PAGE 13
 
 
 SYMBOL TABLE
@@ -756,7 +759,7 @@ VREFN                             00000002
 VREFP                             00000003
 W                                 00000000
 WCOL                              00000007
-MPASM 5.84                        LAB1_3.ASM   9-14-2023  2:53:49         PAGE 14
+MPASM 5.84                        LAB1_3.ASM   9-14-2023  15:44:54         PAGE 14
 
 
 SYMBOL TABLE
@@ -815,7 +818,7 @@ _EBTR2_ON_7L                      000000FB
 _EBTR3_OFF_7L                     000000FF
 _EBTR3_ON_7L                      000000F7
 _EBTRB_OFF_7H                     000000FF
-MPASM 5.84                        LAB1_3.ASM   9-14-2023  2:53:49         PAGE 15
+MPASM 5.84                        LAB1_3.ASM   9-14-2023  15:44:54         PAGE 15
 
 
 SYMBOL TABLE
@@ -874,7 +877,7 @@ _WDTPS_8192_2H                    000000FB
 _WDTPS_8_2H                       000000E7
 _WDT_OFF_2H                       000000FE
 _WDT_ON_2H                        000000FF
-MPASM 5.84                        LAB1_3.ASM   9-14-2023  2:53:49         PAGE 16
+MPASM 5.84                        LAB1_3.ASM   9-14-2023  15:44:54         PAGE 16
 
 
 SYMBOL TABLE
@@ -899,7 +902,7 @@ _XINST_ON_4L                      000000FF
 __18F4520                         00000001
 __DEBUG                           
 __MPLAB_DEBUGGER_SIMULATOR        1
-input                             00000062
+input                             000000FF
 
 Errors   :     0
 Warnings :     2 reported,     0 suppressed
