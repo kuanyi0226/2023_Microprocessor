@@ -1,0 +1,7 @@
+Warning[205] C:\USERS\KUANYI\MPLABXPROJECTS\LAB2.X\LAB2_1.ASM 1 : Found directive in column 1. (List)
+Warning[207] C:\USERS\KUANYI\MPLABXPROJECTS\LAB2.X\LAB2_1.ASM 6 : Found label after column 1. (x1)
+Warning[207] C:\USERS\KUANYI\MPLABXPROJECTS\LAB2.X\LAB2_1.ASM 7 : Found label after column 1. (x2)
+Warning[207] C:\USERS\KUANYI\MPLABXPROJECTS\LAB2.X\LAB2_1.ASM 8 : Found label after column 1. (y1)
+Warning[207] C:\USERS\KUANYI\MPLABXPROJECTS\LAB2.X\LAB2_1.ASM 9 : Found label after column 1. (y2)
+Warning[207] C:\USERS\KUANYI\MPLABXPROJECTS\LAB2.X\LAB2_1.ASM 38 : Found label after column 1. (else_label)
+Warning[207] C:\USERS\KUANYI\MPLABXPROJECTS\LAB2.X\LAB2_1.ASM 42 : Found label after column 1. (end_program)

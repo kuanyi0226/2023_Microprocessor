@@ -62,11 +62,7 @@
         <makeCustomizationEnableLongLines>false</makeCustomizationEnableLongLines>
         <makeCustomizationNormalizeHexFile>false</makeCustomizationNormalizeHexFile>
       </makeCustomizationType>
-<<<<<<< HEAD
       <item path="Lab1_1.asm" ex="true" overriding="false">
-=======
-      <item path="Lab1_1.asm" ex="false" overriding="false">
->>>>>>> 46ac055ae120b60ab3a80ebfae86a32f7f506fbd
         <MPASMWIN-AS>
         </MPASMWIN-AS>
         <MPASMWIN-LD>
@@ -82,11 +78,7 @@
         <mpasmsuite>
         </mpasmsuite>
       </item>
-<<<<<<< HEAD
-      <item path="Lab1_3.asm" ex="false" overriding="false">
-=======
       <item path="Lab1_3.asm" ex="true" overriding="false">
->>>>>>> 46ac055ae120b60ab3a80ebfae86a32f7f506fbd
         <MPASMWIN-AS>
         </MPASMWIN-AS>
         <MPASMWIN-LD>
