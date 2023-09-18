@@ -12,9 +12,7 @@
     <logicalFolder name="SourceFiles"
                    displayName="Source Files"
                    projectFiles="true">
-      <itemPath>Lab1_1.asm</itemPath>
-      <itemPath>Lab1_2.asm</itemPath>
-      <itemPath>Lab1_3.asm</itemPath>
+      <itemPath>Lab2_1.asm</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
@@ -62,38 +60,6 @@
         <makeCustomizationEnableLongLines>false</makeCustomizationEnableLongLines>
         <makeCustomizationNormalizeHexFile>false</makeCustomizationNormalizeHexFile>
       </makeCustomizationType>
-<<<<<<< HEAD
-      <item path="Lab1_1.asm" ex="true" overriding="false">
-=======
-      <item path="Lab1_1.asm" ex="false" overriding="false">
->>>>>>> 46ac055ae120b60ab3a80ebfae86a32f7f506fbd
-        <MPASMWIN-AS>
-        </MPASMWIN-AS>
-        <MPASMWIN-LD>
-        </MPASMWIN-LD>
-        <mpasmsuite>
-        </mpasmsuite>
-      </item>
-      <item path="Lab1_2.asm" ex="true" overriding="false">
-        <MPASMWIN-AS>
-        </MPASMWIN-AS>
-        <MPASMWIN-LD>
-        </MPASMWIN-LD>
-        <mpasmsuite>
-        </mpasmsuite>
-      </item>
-<<<<<<< HEAD
-      <item path="Lab1_3.asm" ex="false" overriding="false">
-=======
-      <item path="Lab1_3.asm" ex="true" overriding="false">
->>>>>>> 46ac055ae120b60ab3a80ebfae86a32f7f506fbd
-        <MPASMWIN-AS>
-        </MPASMWIN-AS>
-        <MPASMWIN-LD>
-        </MPASMWIN-LD>
-        <mpasmsuite>
-        </mpasmsuite>
-      </item>
       <MPASMWIN-AS>
         <property key="cross.reference.file" value=""/>
         <property key="default.radix" value="HEX"/>
@@ -119,7 +85,7 @@
         <property key="oscillator.rcfrequency" value="250"/>
         <property key="oscillator.rcfrequencyunit" value="Kilo"/>
         <property key="periphADC1.altscl" value="false"/>
-        <property key="periphADC1.minTacq" value="5"/>
+        <property key="periphADC1.minTacq" value=""/>
         <property key="periphADC1.tacqunits" value="microseconds"/>
         <property key="periphADC2.altscl" value="false"/>
         <property key="periphADC2.minTacq" value=""/>

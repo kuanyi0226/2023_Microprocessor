@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 MPASM 5.84                        LAB1_2.ASM   9-14-2023  15:40:36         PAGE  1
+=======
+MPASM 5.84                        LAB1_2.ASM   9-13-2023  22:34:47         PAGE  1
+>>>>>>> 46ac055ae120b60ab3a80ebfae86a32f7f506fbd
 
 
 LOC  OBJECT CODE     LINE SOURCE TEXT
@@ -50,21 +54,33 @@ Warning[207]: Found label after column 1. (else_label)
 Warning[207]: Found label after column 1. (phase2)
 000016                00026         phase2:
                       00027         ;//rightward rotate
+<<<<<<< HEAD
 000016 4200           00028         RRNCF 0x00; 
+=======
+000016 4200           00028         RRNCF 0x000; 
+>>>>>>> 46ac055ae120b60ab3a80ebfae86a32f7f506fbd
                       00029         ;//Compare
 000018 0E0A           00030         MOVLW num1
 00001A 6200           00031         CPFSEQ 0x00
 00001C EF?? F???      00032         GOTO start
                       00033         
                       00034         
+<<<<<<< HEAD
 MPASM 5.84                        LAB1_2.ASM   9-14-2023  15:40:36         PAGE  2
+=======
+MPASM 5.84                        LAB1_2.ASM   9-13-2023  22:34:47         PAGE  2
+>>>>>>> 46ac055ae120b60ab3a80ebfae86a32f7f506fbd
 
 
 LOC  OBJECT CODE     LINE SOURCE TEXT
   VALUE
 
                       00035         end
+<<<<<<< HEAD
 MPASM 5.84                        LAB1_2.ASM   9-14-2023  15:40:36         PAGE  3
+=======
+MPASM 5.84                        LAB1_2.ASM   9-13-2023  22:34:47         PAGE  3
+>>>>>>> 46ac055ae120b60ab3a80ebfae86a32f7f506fbd
 
 
 SYMBOL TABLE
@@ -123,7 +139,11 @@ BCLIP                             00000003
 BF                                00000000
 BGST                              00000005
 BOR                               00000000
+<<<<<<< HEAD
 MPASM 5.84                        LAB1_2.ASM   9-14-2023  15:40:36         PAGE  4
+=======
+MPASM 5.84                        LAB1_2.ASM   9-13-2023  22:34:47         PAGE  4
+>>>>>>> 46ac055ae120b60ab3a80ebfae86a32f7f506fbd
 
 
 SYMBOL TABLE
@@ -182,7 +202,11 @@ CLKO                              00000006
 CM0                               00000000
 CM1                               00000001
 CM2                               00000002
+<<<<<<< HEAD
 MPASM 5.84                        LAB1_2.ASM   9-14-2023  15:40:36         PAGE  5
+=======
+MPASM 5.84                        LAB1_2.ASM   9-13-2023  22:34:47         PAGE  5
+>>>>>>> 46ac055ae120b60ab3a80ebfae86a32f7f506fbd
 
 
 SYMBOL TABLE
@@ -241,7 +265,11 @@ FLTS                              00000002
 FREE                              00000004
 FSR0                              00000000
 FSR0H                             00000FEA
+<<<<<<< HEAD
 MPASM 5.84                        LAB1_2.ASM   9-14-2023  15:40:36         PAGE  6
+=======
+MPASM 5.84                        LAB1_2.ASM   9-13-2023  22:34:47         PAGE  6
+>>>>>>> 46ac055ae120b60ab3a80ebfae86a32f7f506fbd
 
 
 SYMBOL TABLE
@@ -300,7 +328,11 @@ INT2P                             00000007
 INTCON                            00000FF2
 INTCON2                           00000FF1
 INTCON3                           00000FF0
+<<<<<<< HEAD
 MPASM 5.84                        LAB1_2.ASM   9-14-2023  15:40:36         PAGE  7
+=======
+MPASM 5.84                        LAB1_2.ASM   9-13-2023  22:34:47         PAGE  7
+>>>>>>> 46ac055ae120b60ab3a80ebfae86a32f7f506fbd
 
 
 SYMBOL TABLE
@@ -359,7 +391,11 @@ LATD4                             00000004
 LATD5                             00000005
 LATD6                             00000006
 LATD7                             00000007
+<<<<<<< HEAD
 MPASM 5.84                        LAB1_2.ASM   9-14-2023  15:40:36         PAGE  8
+=======
+MPASM 5.84                        LAB1_2.ASM   9-13-2023  22:34:47         PAGE  8
+>>>>>>> 46ac055ae120b60ab3a80ebfae86a32f7f506fbd
 
 
 SYMBOL TABLE
@@ -418,7 +454,11 @@ P                                 00000004
 P1A                               00000002
 P1B                               00000005
 P1C                               00000006
+<<<<<<< HEAD
 MPASM 5.84                        LAB1_2.ASM   9-14-2023  15:40:36         PAGE  9
+=======
+MPASM 5.84                        LAB1_2.ASM   9-13-2023  22:34:47         PAGE  9
+>>>>>>> 46ac055ae120b60ab3a80ebfae86a32f7f506fbd
 
 
 SYMBOL TABLE
@@ -477,7 +517,11 @@ PROD                              00000FF3
 PRODH                             00000FF4
 PRODL                             00000FF3
 PRSEN                             00000007
+<<<<<<< HEAD
 MPASM 5.84                        LAB1_2.ASM   9-14-2023  15:40:36         PAGE 10
+=======
+MPASM 5.84                        LAB1_2.ASM   9-13-2023  22:34:47         PAGE 10
+>>>>>>> 46ac055ae120b60ab3a80ebfae86a32f7f506fbd
 
 
 SYMBOL TABLE
@@ -536,7 +580,11 @@ RCIE                              00000005
 RCIF                              00000005
 RCIP                              00000005
 RCMT                              00000006
+<<<<<<< HEAD
 MPASM 5.84                        LAB1_2.ASM   9-14-2023  15:40:36         PAGE 11
+=======
+MPASM 5.84                        LAB1_2.ASM   9-13-2023  22:34:47         PAGE 11
+>>>>>>> 46ac055ae120b60ab3a80ebfae86a32f7f506fbd
 
 
 SYMBOL TABLE
@@ -595,7 +643,11 @@ SSPBUF                            00000FC9
 SSPCON1                           00000FC6
 SSPCON2                           00000FC5
 SSPEN                             00000005
+<<<<<<< HEAD
 MPASM 5.84                        LAB1_2.ASM   9-14-2023  15:40:36         PAGE 12
+=======
+MPASM 5.84                        LAB1_2.ASM   9-13-2023  22:34:47         PAGE 12
+>>>>>>> 46ac055ae120b60ab3a80ebfae86a32f7f506fbd
 
 
 SYMBOL TABLE
@@ -654,7 +706,11 @@ T3CKPS1                           00000005
 T3CON                             00000FB1
 T3SYNC                            00000002
 TABLAT                            00000FF5
+<<<<<<< HEAD
 MPASM 5.84                        LAB1_2.ASM   9-14-2023  15:40:36         PAGE 13
+=======
+MPASM 5.84                        LAB1_2.ASM   9-13-2023  22:34:47         PAGE 13
+>>>>>>> 46ac055ae120b60ab3a80ebfae86a32f7f506fbd
 
 
 SYMBOL TABLE
@@ -713,7 +769,11 @@ TRISA7                            00000007
 TRISB                             00000F93
 TRISB0                            00000000
 TRISB1                            00000001
+<<<<<<< HEAD
 MPASM 5.84                        LAB1_2.ASM   9-14-2023  15:40:36         PAGE 14
+=======
+MPASM 5.84                        LAB1_2.ASM   9-13-2023  22:34:47         PAGE 14
+>>>>>>> 46ac055ae120b60ab3a80ebfae86a32f7f506fbd
 
 
 SYMBOL TABLE
@@ -772,7 +832,11 @@ VREFN                             00000002
 VREFP                             00000003
 W                                 00000000
 WCOL                              00000007
+<<<<<<< HEAD
 MPASM 5.84                        LAB1_2.ASM   9-14-2023  15:40:36         PAGE 15
+=======
+MPASM 5.84                        LAB1_2.ASM   9-13-2023  22:34:47         PAGE 15
+>>>>>>> 46ac055ae120b60ab3a80ebfae86a32f7f506fbd
 
 
 SYMBOL TABLE
@@ -831,7 +895,11 @@ _EBTR2_ON_7L                      000000FB
 _EBTR3_OFF_7L                     000000FF
 _EBTR3_ON_7L                      000000F7
 _EBTRB_OFF_7H                     000000FF
+<<<<<<< HEAD
 MPASM 5.84                        LAB1_2.ASM   9-14-2023  15:40:36         PAGE 16
+=======
+MPASM 5.84                        LAB1_2.ASM   9-13-2023  22:34:47         PAGE 16
+>>>>>>> 46ac055ae120b60ab3a80ebfae86a32f7f506fbd
 
 
 SYMBOL TABLE
@@ -890,7 +958,11 @@ _WDTPS_8192_2H                    000000FB
 _WDTPS_8_2H                       000000E7
 _WDT_OFF_2H                       000000FE
 _WDT_ON_2H                        000000FF
+<<<<<<< HEAD
 MPASM 5.84                        LAB1_2.ASM   9-14-2023  15:40:36         PAGE 17
+=======
+MPASM 5.84                        LAB1_2.ASM   9-13-2023  22:34:47         PAGE 17
+>>>>>>> 46ac055ae120b60ab3a80ebfae86a32f7f506fbd
 
 
 SYMBOL TABLE
