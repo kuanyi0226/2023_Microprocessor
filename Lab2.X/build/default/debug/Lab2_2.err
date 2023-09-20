@@ -1,0 +1,7 @@
+Warning[205] C:\USERS\KUANYI\MPLABXPROJECTS\LAB2.X\LAB2_2.ASM 1 : Found directive in column 1. (List)
+Warning[207] C:\USERS\KUANYI\MPLABXPROJECTS\LAB2.X\LAB2_2.ASM 22 : Found label after column 1. (start_label)
+Warning[207] C:\USERS\KUANYI\MPLABXPROJECTS\LAB2.X\LAB2_2.ASM 27 : Found label after column 1. (operate)
+Warning[202] C:\USERS\KUANYI\MPLABXPROJECTS\LAB2.X\LAB2_2.ASM 28 : Argument out of range.  Least significant bits used.
+Warning[202] C:\USERS\KUANYI\MPLABXPROJECTS\LAB2.X\LAB2_2.ASM 34 : Argument out of range.  Least significant bits used.
+Warning[207] C:\USERS\KUANYI\MPLABXPROJECTS\LAB2.X\LAB2_2.ASM 38 : Found label after column 1. (end_operate)
+Warning[207] C:\USERS\KUANYI\MPLABXPROJECTS\LAB2.X\LAB2_2.ASM 42 : Found label after column 1. (end_label)

@@ -1,4 +1,4 @@
-MPASM 5.84                        LAB2_1.ASM   9-20-2023  21:07:29         PAGE  1
+MPASM 5.84                        LAB2_2.ASM   9-20-2023  22:13:49         PAGE  1
 
 
 LOC  OBJECT CODE     LINE SOURCE TEXT
@@ -22,59 +22,55 @@ Warning[205]: Found directive in column 1. (List)
                       00005         org 0x00
                       00006         
                       00007         ;initialize
-000000 0E03           00008         MOVLW 0x03; WREG = 0x03
-000002 0101           00009         MOVLB 0x1; BSR = 1
-000004 6F00           00010         MOVWF 0x00, 1; use BSR select bank, [0x100] = 0x03
+000000 0E05           00008         MOVLW 0x05; WREG = 0x05
+000002 0100           00009         MOVLB 0x0; BSR = 0
+000004 6F00           00010         MOVWF 0x00, 1; use BSR select bank, [0x000] = 0x05
                       00011         
-000006 0E08           00012         MOVLW 0x08; WREG = 0x08
-000008 6F01           00013         MOVWF 0x01, 1; [0x101] = 0x08
+000006 0E02           00012         MOVLW 0x02; WREG = 0x02
+000008 6F18           00013         MOVWF 0x18, 1; [0x018] = 0x02
                       00014         
-00000A EE01 F000      00015         LFSR 0, 0x100; FSR0 point to 0x100
-00000E EE11 F001      00016         LFSR 1, 0x101; FSR1 point to 0x101
-000012 EE21 F002      00017         LFSR 2, 0x102; FSR2 point to 0x102
-                      00018         
-000016 0E02           00019         MOVLW 0x02; WREG = 0x02
-000018 6E00           00020         MOVWF 0x00; [0x00] = 0x02 //counter: record the address of FSR2
+00000A EE00 F000      00015         LFSR 0, 0x000; FSR0 point to 0x000
+00000E EE10 F018      00016         LFSR 1, 0x018; FSR1 point to 0x018
+                      00017 
+                      00018         ;Notice that WREG only has 8 bits, cant read whole address
+000012 0E01           00019         MOVLW 0x01; WREG = 0x01
+000014 6E30           00020         MOVWF 0x30; [0x30] = 0x01 //counter
                       00021         
 Warning[207]: Found label after column 1. (start_label)
-00001A                00022     start_label:
-00001A 0E09           00023         MOVLW 0x09; WREG = 0x09(ending  is 0x109)
-00001C 6200           00024         CPFSEQ 0x00; skip if FSR2 == 0x109 by checking counter
-00001E EF?? F???      00025         GOTO operate; if: FSR2 != 0x109
-000022 EF?? F???      00026         GOTO end_label; else: FSR2 == 0x109(end of program)
+000016                00022     start_label:
+000016 0E09           00023         MOVLW 0x09; WREG = 0x09(ending  is 0x009)
+000018 6230           00024         CPFSEQ 0x30; skip if counter == 0x09 
+00001A EF?? F???      00025         GOTO operate; if: counter != 0x009
+00001E EF?? F???      00026         GOTO end_label; else: counnter == 0x009(end of program)
 Warning[207]: Found label after column 1. (operate)
-000026                00027     operate:
-                      00028         ;FSR1 - FSR0 = FSR2
-                      00029         ;()-(WREG) = ()
+000022                00027     operate:
 Warning[202]: Argument out of range.  Least significant bits used.
-000026 50EE           00030         MOVF POSTINC0, WREG; WREG = [FSR0], then FSR0++
-000028 A000           00031         BTFSS 0x00, 0; test odd: skip if lsb of INDF2 is odd(lsb == 1) by checking counter
-00002A EF?? F???      00032         GOTO else_label
-Warning[207]: Found label after column 1. (if_label)
-00002E                00033         if_label: ; odd: do substracting
-00002E 5CE6           00034         SUBWF POSTINC1, 0; WREG = [FSR1] - WREG, then FSR1++
-000030 EF?? F???      00035         GOTO end_operate
-Warning[207]: Found label after column 1. (else_label)
-000034                00036         else_label: ;even: do summing
-000034 24E6           00037         ADDWF POSTINC1, 0; WREG = [FSR1] + WREG, then FSR1++
-MPASM 5.84                        LAB2_1.ASM   9-20-2023  21:07:29         PAGE  2
+000022 50E5           00028         MOVF POSTDEC1, WREG; WREG = [FSR1], then FSR1--
+000024 6E31           00029         MOVWF 0x31; store previous [FSR1] in 0x31
+                      00030         ;do substracting
+000026 5CEF           00031         SUBWF INDF0, 0; WREG = FSR0 - WREG(previous [FSR1])
+000028 6EE7           00032         MOVWF INDF1; stroe the substracting result
+                      00033         ;do summing
+Warning[202]: Argument out of range.  Least significant bits used.
+00002A 50EE           00034         MOVF POSTINC0, WREG; WREG = [FSR0], then FSR0++
+00002C 2431           00035         ADDWF 0x31, 0; WREG = FSR1 + WREG(previous [FSR0])
+00002E 6EEF           00036         MOVWF INDF0; stroe the substracting result
+                      00037         
+Warning[207]: Found label after column 1. (end_operate)
+MPASM 5.84                        LAB2_2.ASM   9-20-2023  22:13:49         PAGE  2
 
 
 LOC  OBJECT CODE     LINE SOURCE TEXT
   VALUE
 
-                      00038         
-Warning[207]: Found label after column 1. (end_operate)
-000036                00039     end_operate:
-000036 6EDE           00040         MOVWF POSTINC2; FSR2 = WREG (store the result), then FSR2++
-000038 2A00           00041         INCF 0x00; counter++
-00003A EF?? F???      00042         GOTO start_label; go to next point
-                      00043         
+000030                00038     end_operate:
+000030 2A30           00039         INCF 0x30; counter++
+000032 EF?? F???      00040         GOTO start_label; go to next point
+                      00041         
 Warning[207]: Found label after column 1. (end_label)
-00003E                00044     end_label:
-                      00045         
-                      00046         end
-MPASM 5.84                        LAB2_1.ASM   9-20-2023  21:07:29         PAGE  3
+000036                00042     end_label:
+                      00043         end
+MPASM 5.84                        LAB2_2.ASM   9-20-2023  22:13:49         PAGE  3
 
 
 SYMBOL TABLE
@@ -133,7 +129,7 @@ BCLIP                             00000003
 BF                                00000000
 BGST                              00000005
 BOR                               00000000
-MPASM 5.84                        LAB2_1.ASM   9-20-2023  21:07:29         PAGE  4
+MPASM 5.84                        LAB2_2.ASM   9-20-2023  22:13:49         PAGE  4
 
 
 SYMBOL TABLE
@@ -192,7 +188,7 @@ CLKO                              00000006
 CM0                               00000000
 CM1                               00000001
 CM2                               00000002
-MPASM 5.84                        LAB2_1.ASM   9-20-2023  21:07:29         PAGE  5
+MPASM 5.84                        LAB2_2.ASM   9-20-2023  22:13:49         PAGE  5
 
 
 SYMBOL TABLE
@@ -251,7 +247,7 @@ FLTS                              00000002
 FREE                              00000004
 FSR0                              00000000
 FSR0H                             00000FEA
-MPASM 5.84                        LAB2_1.ASM   9-20-2023  21:07:29         PAGE  6
+MPASM 5.84                        LAB2_2.ASM   9-20-2023  22:13:49         PAGE  6
 
 
 SYMBOL TABLE
@@ -310,7 +306,7 @@ INT2P                             00000007
 INTCON                            00000FF2
 INTCON2                           00000FF1
 INTCON3                           00000FF0
-MPASM 5.84                        LAB2_1.ASM   9-20-2023  21:07:29         PAGE  7
+MPASM 5.84                        LAB2_2.ASM   9-20-2023  22:13:49         PAGE  7
 
 
 SYMBOL TABLE
@@ -369,7 +365,7 @@ LATD4                             00000004
 LATD5                             00000005
 LATD6                             00000006
 LATD7                             00000007
-MPASM 5.84                        LAB2_1.ASM   9-20-2023  21:07:29         PAGE  8
+MPASM 5.84                        LAB2_2.ASM   9-20-2023  22:13:49         PAGE  8
 
 
 SYMBOL TABLE
@@ -428,7 +424,7 @@ P                                 00000004
 P1A                               00000002
 P1B                               00000005
 P1C                               00000006
-MPASM 5.84                        LAB2_1.ASM   9-20-2023  21:07:29         PAGE  9
+MPASM 5.84                        LAB2_2.ASM   9-20-2023  22:13:49         PAGE  9
 
 
 SYMBOL TABLE
@@ -487,7 +483,7 @@ PROD                              00000FF3
 PRODH                             00000FF4
 PRODL                             00000FF3
 PRSEN                             00000007
-MPASM 5.84                        LAB2_1.ASM   9-20-2023  21:07:29         PAGE 10
+MPASM 5.84                        LAB2_2.ASM   9-20-2023  22:13:49         PAGE 10
 
 
 SYMBOL TABLE
@@ -546,7 +542,7 @@ RCIE                              00000005
 RCIF                              00000005
 RCIP                              00000005
 RCMT                              00000006
-MPASM 5.84                        LAB2_1.ASM   9-20-2023  21:07:29         PAGE 11
+MPASM 5.84                        LAB2_2.ASM   9-20-2023  22:13:49         PAGE 11
 
 
 SYMBOL TABLE
@@ -605,7 +601,7 @@ SSPBUF                            00000FC9
 SSPCON1                           00000FC6
 SSPCON2                           00000FC5
 SSPEN                             00000005
-MPASM 5.84                        LAB2_1.ASM   9-20-2023  21:07:29         PAGE 12
+MPASM 5.84                        LAB2_2.ASM   9-20-2023  22:13:49         PAGE 12
 
 
 SYMBOL TABLE
@@ -664,7 +660,7 @@ T3CKPS1                           00000005
 T3CON                             00000FB1
 T3SYNC                            00000002
 TABLAT                            00000FF5
-MPASM 5.84                        LAB2_1.ASM   9-20-2023  21:07:29         PAGE 13
+MPASM 5.84                        LAB2_2.ASM   9-20-2023  22:13:49         PAGE 13
 
 
 SYMBOL TABLE
@@ -723,7 +719,7 @@ TRISA7                            00000007
 TRISB                             00000F93
 TRISB0                            00000000
 TRISB1                            00000001
-MPASM 5.84                        LAB2_1.ASM   9-20-2023  21:07:29         PAGE 14
+MPASM 5.84                        LAB2_2.ASM   9-20-2023  22:13:49         PAGE 14
 
 
 SYMBOL TABLE
@@ -782,7 +778,7 @@ VREFN                             00000002
 VREFP                             00000003
 W                                 00000000
 WCOL                              00000007
-MPASM 5.84                        LAB2_1.ASM   9-20-2023  21:07:29         PAGE 15
+MPASM 5.84                        LAB2_2.ASM   9-20-2023  22:13:49         PAGE 15
 
 
 SYMBOL TABLE
@@ -841,7 +837,7 @@ _EBTR2_ON_7L                      000000FB
 _EBTR3_OFF_7L                     000000FF
 _EBTR3_ON_7L                      000000F7
 _EBTRB_OFF_7H                     000000FF
-MPASM 5.84                        LAB2_1.ASM   9-20-2023  21:07:29         PAGE 16
+MPASM 5.84                        LAB2_2.ASM   9-20-2023  22:13:49         PAGE 16
 
 
 SYMBOL TABLE
@@ -900,7 +896,7 @@ _WDTPS_8192_2H                    000000FB
 _WDTPS_8_2H                       000000E7
 _WDT_OFF_2H                       000000FE
 _WDT_ON_2H                        000000FF
-MPASM 5.84                        LAB2_1.ASM   9-20-2023  21:07:29         PAGE 17
+MPASM 5.84                        LAB2_2.ASM   9-20-2023  22:13:49         PAGE 17
 
 
 SYMBOL TABLE
@@ -925,15 +921,13 @@ _XINST_ON_4L                      000000FF
 __18F4520                         00000001
 __DEBUG                           
 __MPLAB_DEBUGGER_SIMULATOR        1
-else_label                        00000034
-end_label                         0000003E
-end_operate                       00000036
-if_label                          0000002E
-operate                           00000026
-start_label                       0000001A
+end_label                         00000036
+end_operate                       00000030
+operate                           00000022
+start_label                       00000016
 
 Errors   :     0
-Warnings :     8 reported,     0 suppressed
+Warnings :     7 reported,     0 suppressed
 Messages :     0 reported,     0 suppressed
 
 

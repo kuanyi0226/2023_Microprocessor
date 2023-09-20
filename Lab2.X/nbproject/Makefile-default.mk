@@ -57,17 +57,17 @@ OBJECTDIR=build/${CND_CONF}/${IMAGE_TYPE}
 DISTDIR=dist/${CND_CONF}/${IMAGE_TYPE}
 
 # Source Files Quoted if spaced
-SOURCEFILES_QUOTED_IF_SPACED=Lab2_1.asm
+SOURCEFILES_QUOTED_IF_SPACED=Lab_3.asm
 
 # Object Files Quoted if spaced
-OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/Lab2_1.o
-POSSIBLE_DEPFILES=${OBJECTDIR}/Lab2_1.o.d
+OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/Lab_3.o
+POSSIBLE_DEPFILES=${OBJECTDIR}/Lab_3.o.d
 
 # Object Files
-OBJECTFILES=${OBJECTDIR}/Lab2_1.o
+OBJECTFILES=${OBJECTDIR}/Lab_3.o
 
 # Source Files
-SOURCEFILES=Lab2_1.asm
+SOURCEFILES=Lab_3.asm
 
 
 CFLAGS=
@@ -94,22 +94,22 @@ MP_LINKER_DEBUG_OPTION=
 # ------------------------------------------------------------------------------------
 # Rules for buildStep: assemble
 ifeq ($(TYPE_IMAGE), DEBUG_RUN)
-${OBJECTDIR}/Lab2_1.o: Lab2_1.asm  nbproject/Makefile-${CND_CONF}.mk
+${OBJECTDIR}/Lab_3.o: Lab_3.asm  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}" 
-	@${RM} ${OBJECTDIR}/Lab2_1.o.d 
-	@${RM} ${OBJECTDIR}/Lab2_1.o 
-	@${FIXDEPS} dummy.d -e "${OBJECTDIR}/Lab2_1.err" $(SILENT) -c ${MP_AS} $(MP_EXTRA_AS_PRE) -d__DEBUG -d__MPLAB_DEBUGGER_SIMULATOR=1 -q -p$(MP_PROCESSOR_OPTION)  -l\"${OBJECTDIR}/Lab2_1.lst\" -e\"${OBJECTDIR}/Lab2_1.err\" $(ASM_OPTIONS)    -o\"${OBJECTDIR}/Lab2_1.o\" \"Lab2_1.asm\" 
-	@${DEP_GEN} -d "${OBJECTDIR}/Lab2_1.o"
-	@${FIXDEPS} "${OBJECTDIR}/Lab2_1.o.d" $(SILENT) -rsi ${MP_AS_DIR} -c18 
+	@${RM} ${OBJECTDIR}/Lab_3.o.d 
+	@${RM} ${OBJECTDIR}/Lab_3.o 
+	@${FIXDEPS} dummy.d -e "${OBJECTDIR}/Lab_3.err" $(SILENT) -c ${MP_AS} $(MP_EXTRA_AS_PRE) -d__DEBUG -d__MPLAB_DEBUGGER_SIMULATOR=1 -q -p$(MP_PROCESSOR_OPTION)  -l\"${OBJECTDIR}/Lab_3.lst\" -e\"${OBJECTDIR}/Lab_3.err\" $(ASM_OPTIONS)    -o\"${OBJECTDIR}/Lab_3.o\" \"Lab_3.asm\" 
+	@${DEP_GEN} -d "${OBJECTDIR}/Lab_3.o"
+	@${FIXDEPS} "${OBJECTDIR}/Lab_3.o.d" $(SILENT) -rsi ${MP_AS_DIR} -c18 
 	
 else
-${OBJECTDIR}/Lab2_1.o: Lab2_1.asm  nbproject/Makefile-${CND_CONF}.mk
+${OBJECTDIR}/Lab_3.o: Lab_3.asm  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}" 
-	@${RM} ${OBJECTDIR}/Lab2_1.o.d 
-	@${RM} ${OBJECTDIR}/Lab2_1.o 
-	@${FIXDEPS} dummy.d -e "${OBJECTDIR}/Lab2_1.err" $(SILENT) -c ${MP_AS} $(MP_EXTRA_AS_PRE) -q -p$(MP_PROCESSOR_OPTION)  -l\"${OBJECTDIR}/Lab2_1.lst\" -e\"${OBJECTDIR}/Lab2_1.err\" $(ASM_OPTIONS)    -o\"${OBJECTDIR}/Lab2_1.o\" \"Lab2_1.asm\" 
-	@${DEP_GEN} -d "${OBJECTDIR}/Lab2_1.o"
-	@${FIXDEPS} "${OBJECTDIR}/Lab2_1.o.d" $(SILENT) -rsi ${MP_AS_DIR} -c18 
+	@${RM} ${OBJECTDIR}/Lab_3.o.d 
+	@${RM} ${OBJECTDIR}/Lab_3.o 
+	@${FIXDEPS} dummy.d -e "${OBJECTDIR}/Lab_3.err" $(SILENT) -c ${MP_AS} $(MP_EXTRA_AS_PRE) -q -p$(MP_PROCESSOR_OPTION)  -l\"${OBJECTDIR}/Lab_3.lst\" -e\"${OBJECTDIR}/Lab_3.err\" $(ASM_OPTIONS)    -o\"${OBJECTDIR}/Lab_3.o\" \"Lab_3.asm\" 
+	@${DEP_GEN} -d "${OBJECTDIR}/Lab_3.o"
+	@${FIXDEPS} "${OBJECTDIR}/Lab_3.o.d" $(SILENT) -rsi ${MP_AS_DIR} -c18 
 	
 endif
 
