@@ -12,9 +12,9 @@
     <logicalFolder name="SourceFiles"
                    displayName="Source Files"
                    projectFiles="true">
-      <itemPath>Lab2_1.asm</itemPath>
-      <itemPath>Lab2_2.asm</itemPath>
-      <itemPath>Lab_3.asm</itemPath>
+      <itemPath>Lab3_1.asm</itemPath>
+      <itemPath>Lab3_2.asm</itemPath>
+      <itemPath>Lab3_3.asm</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
@@ -62,7 +62,7 @@
         <makeCustomizationEnableLongLines>false</makeCustomizationEnableLongLines>
         <makeCustomizationNormalizeHexFile>false</makeCustomizationNormalizeHexFile>
       </makeCustomizationType>
-      <item path="Lab2_1.asm" ex="true" overriding="false">
+      <item path="Lab3_1.asm" ex="true" overriding="false">
         <MPASMWIN-AS>
         </MPASMWIN-AS>
         <MPASMWIN-LD>
@@ -70,7 +70,7 @@
         <mpasmsuite>
         </mpasmsuite>
       </item>
-      <item path="Lab2_2.asm" ex="true" overriding="false">
+      <item path="Lab3_2.asm" ex="true" overriding="false">
         <MPASMWIN-AS>
         </MPASMWIN-AS>
         <MPASMWIN-LD>
@@ -78,7 +78,13 @@
         <mpasmsuite>
         </mpasmsuite>
       </item>
-      <item path="Lab_3.asm" ex="true" overriding="false">
+      <item path="Lab3_3.asm" ex="true" overriding="false">
+        <MPASMWIN-AS>
+        </MPASMWIN-AS>
+        <MPASMWIN-LD>
+        </MPASMWIN-LD>
+        <mpasmsuite>
+        </mpasmsuite>
       </item>
       <MPASMWIN-AS>
         <property key="cross.reference.file" value=""/>

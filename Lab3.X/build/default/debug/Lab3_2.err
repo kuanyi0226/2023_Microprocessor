@@ -1,0 +1,7 @@
+Warning[205] C:\USERS\KUANYI\MPLABXPROJECTS\LAB3.X\LAB3_2.ASM 1 : Found directive in column 1. (List)
+Warning[207] C:\USERS\KUANYI\MPLABXPROJECTS\LAB3.X\LAB3_2.ASM 7 : Found label after column 1. (input1_high)
+Warning[207] C:\USERS\KUANYI\MPLABXPROJECTS\LAB3.X\LAB3_2.ASM 8 : Found label after column 1. (input1_low)
+Warning[207] C:\USERS\KUANYI\MPLABXPROJECTS\LAB3.X\LAB3_2.ASM 9 : Found label after column 1. (input2_high)
+Warning[207] C:\USERS\KUANYI\MPLABXPROJECTS\LAB3.X\LAB3_2.ASM 10 : Found label after column 1. (input2_low)
+Warning[207] C:\USERS\KUANYI\MPLABXPROJECTS\LAB3.X\LAB3_2.ASM 30 : Found label after column 1. (has_carry)
+Warning[207] C:\USERS\KUANYI\MPLABXPROJECTS\LAB3.X\LAB3_2.ASM 32 : Found label after column 1. (no_carry)
