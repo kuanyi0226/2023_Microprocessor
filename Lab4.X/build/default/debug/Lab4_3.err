@@ -1,0 +1,18 @@
+Warning[205] C:\USERS\KUANYI\MPLABXPROJECTS\LAB4.X\LAB4_3.ASM 1 : Found directive in column 1. (List)
+Warning[207] C:\USERS\KUANYI\MPLABXPROJECTS\LAB4.X\LAB4_3.ASM 6 : Found label after column 1. (input_n)
+Warning[207] C:\USERS\KUANYI\MPLABXPROJECTS\LAB4.X\LAB4_3.ASM 7 : Found label after column 1. (input_k)
+Warning[207] C:\USERS\KUANYI\MPLABXPROJECTS\LAB4.X\LAB4_3.ASM 9 : Found label after column 1. (n_addr)
+Warning[207] C:\USERS\KUANYI\MPLABXPROJECTS\LAB4.X\LAB4_3.ASM 10 : Found label after column 1. (k_addr)
+Warning[207] C:\USERS\KUANYI\MPLABXPROJECTS\LAB4.X\LAB4_3.ASM 11 : Found label after column 1. (right_flag_addr)
+Warning[207] C:\USERS\KUANYI\MPLABXPROJECTS\LAB4.X\LAB4_3.ASM 12 : Found label after column 1. (done_flag_addr)
+Warning[207] C:\USERS\KUANYI\MPLABXPROJECTS\LAB4.X\LAB4_3.ASM 14 : Found label after column 1. (initial)
+Warning[207] C:\USERS\KUANYI\MPLABXPROJECTS\LAB4.X\LAB4_3.ASM 27 : Found label after column 1. (Set_Done_Flag)
+Warning[207] C:\USERS\KUANYI\MPLABXPROJECTS\LAB4.X\LAB4_3.ASM 31 : Found label after column 1. (Reset_Done_Flag)
+Warning[207] C:\USERS\KUANYI\MPLABXPROJECTS\LAB4.X\LAB4_3.ASM 37 : Found label after column 1. (Fact)
+Warning[202] C:\USERS\KUANYI\MPLABXPROJECTS\LAB4.X\LAB4_3.ASM 39 : Argument out of range.  Least significant bits used.
+Warning[207] C:\USERS\KUANYI\MPLABXPROJECTS\LAB4.X\LAB4_3.ASM 50 : Found label after column 1. (return_back)
+Warning[207] C:\USERS\KUANYI\MPLABXPROJECTS\LAB4.X\LAB4_3.ASM 57 : Found label after column 1. (recursive)
+Warning[202] C:\USERS\KUANYI\MPLABXPROJECTS\LAB4.X\LAB4_3.ASM 71 : Argument out of range.  Least significant bits used.
+Warning[207] C:\USERS\KUANYI\MPLABXPROJECTS\LAB4.X\LAB4_3.ASM 73 : Found label after column 1. (restore_k)
+Warning[207] C:\USERS\KUANYI\MPLABXPROJECTS\LAB4.X\LAB4_3.ASM 76 : Found label after column 1. (is_zero)
+Warning[207] C:\USERS\KUANYI\MPLABXPROJECTS\LAB4.X\LAB4_3.ASM 96 : Found label after column 1. (finish)
