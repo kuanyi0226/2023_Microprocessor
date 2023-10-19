@@ -1,0 +1,170 @@
+
+
+Microchip MPLAB XC8 Assembler V2.45 build 20230818022343 
+                                                                                                           Thu Oct 19 04:00:23 2023
+
+
+     1                           	processor	18F4520
+     2                           	pagewidth 132
+     3                           	opt	flic
+     4                           	psect	udata_acs,global,class=COMRAM,space=1,delta=1,lowdata,noexec
+     5                           	psect	udata_bank0,global,class=BANK0,space=1,delta=1,lowdata,noexec
+     6                           	psect	udata_bank1,global,class=BANK1,space=1,delta=1,lowdata,noexec
+     7                           	psect	udata_bank2,global,class=BANK2,space=1,delta=1,lowdata,noexec
+     8                           	psect	udata_bank3,global,class=BANK3,space=1,delta=1,lowdata,noexec
+     9                           	psect	udata_bank4,global,class=BANK4,space=1,delta=1,lowdata,noexec
+    10                           	psect	udata_bank5,global,class=BANK5,space=1,delta=1,lowdata,noexec
+    11                           	psect	udata,global,class=RAM,space=1,delta=1,noexec
+    12                           	psect	code,global,reloc=2,class=CODE,delta=1
+    13                           	psect	data,global,reloc=2,class=CONST,delta=1,noexec
+    14                           	psect	edata,global,class=EEDATA,space=3,delta=1,noexec
+    15                           	psect	mytext,local,reloc=2,class=CODE,delta=1
+    16   000000                     
+    17                           	psect	edata
+    18   000000                     stk_offset	set	0
+    19   000000                     auto_size	set	0
+    20                           
+    21                           ; stack_auto defines a symbol /name/_offset which equates to the
+    22                           ; stack offset of the auto object in question
+    23   000000                     
+    24                           ; stack_param defines a symbol /name/_offset which equates to the
+    25                           ; stack offset of the parameter object in question
+    26   000000                     
+    27                           ; alloc_stack adjusts the SP to allocate space for auto objects
+    28                           ; it also links in to the btemp symbol so that can be used
+    29   000000                     
+    30                           ; restore_stack adjusts the SP to remove all auto and parameter
+    31                           ; objects from the stack prior to returning from a function
+    32   000000                     
+    33                           	psect	mytext
+    34                           
+    35                           ; notice: int: 16 bit, char: 8 bit
+    36   000674                     _multi_signed:
+    37                           	callstack 0
+    38                           
+    39                           ; multiplicand(8 bit) stores in WREG, multiplier(4 bit)stores in 0x01
+    40   000674  6E11               	movwf	17,c	; [0x10] = multiplicand
+    41   000676  C001 F012          	movff	1,18	; [0x11] = multiplier
+    42   00067A  0E04               	movlw	4
+    43   00067C  6E20               	movwf	32,c
+    44                           
+    45                           ;final sign bit calculate
+    46   00067E  6A30               	clrf	48,c	; clear
+    47                           
+    48                           ;xor
+    49   000680  C011 FFE8          	movff	17,wreg	; WREG = Multiplicand
+    50   000684  1812               	xorwf	18,w,c	; WREG = Multiplicand xor Multiplier
+    51   000686  BEE8               	btfsc	wreg,7,c	; skip if msb of WREG is 0(sign bit = 0)
+    52   000688  2A30               	incf	48,f,c	; sign bit = 1
+    53                           
+    54                           ;turn multiplicand & multiplier to positive
+    55   00068A  BE11               	btfsc	17,7,c	;skip if msb of Multiplicand is 0(positive)
+    56   00068C  6C11               	negf	17,c	; negative -> positive
+    57   00068E  B612               	btfsc	18,3,c	;skip if bit3 of Multiplier is 0(positive)
+    58   000690  6C12               	negf	18,c	; negative -> positive
+    59                           
+    60                           ;unsigned multiplication(8 bit * 4 bit)
+    61   000692  6A01               	clrf	1,c	; clear
+    62   000694  6A02               	clrf	2,c
+    63   000696                     loop:
+    64                           
+    65                           ; do four rounds of add
+    66                           ;add multiplicand to output or not
+    67                           ;Notice: it will not skip the whole macro
+    68   000696  A012               	btfss	18,0,c	; skip if lsb is clear(zero)
+    69                           
+    70                           ;Notice that it will not skip the whole macro
+    71   000698  D008               	goto	skip_macro
+    72                           
+    73                           ;low
+    74   00069A  C011 FFE8          	movff	17,wreg	; WREG = Multiplicand
+    75   00069E  2601               	addwf	1,f,c	; output_l += Multiplicand
+    76                           
+    77                           ;carry
+    78   0006A0  E301               	bnc	no_carry	; C = 0, goto no_carry
+    79   0006A2  2A02               	incf	2,f,c	; dest_h++
+    80   0006A4                     no_carry:
+    81                           
+    82                           ;high
+    83   0006A4  C010 FFE8          	movff	16,wreg	; WREG = Multiplicand_exceed
+    84   0006A8  2602               	addwf	2,f,c	; output_h += Multiplicand_exceed
+    85   0006AA                     skip_macro:
+    86                           
+    87                           ;shift Multiplicand(notice that is has 8 bit) & Multiplier
+    88   0006AA  4610               	rlncf	16,f,c	; Multiplicand_exceed shift left
+    89   0006AC  9010               	bcf	16,0,c	; clear LSB of Multiplicand_exceed
+    90   0006AE  3611               	rlcf	17,f,c	; Multiplicand shift left, if has carry, extend it to Multiplicand_exceed(bit8~15 of Mu
+      +                          ltiplicand)
+    91   0006B0  B0D8               	btfsc	status,0,c	; skip if carry flag == 0 (no carry)
+    92   0006B2  2A10               	incf	16,f,c	; set lsb == 1 (has carry)
+    93   0006B4  9011               	bcf	17,0,c	; clear LSB of Multiplicand
+    94   0006B6  4212               	rrncf	18,f,c	; Multiplier shift right
+    95   0006B8  9E12               	bcf	18,7,c	; clear MSB of Multiplier
+    96                           
+    97                           ;next turn or not
+    98   0006BA  0620               	decf	32,f,c	; counter--
+    99   0006BC  E1EC               	bnz	loop	; zero flag is not zero, go for another round
+   100                           
+   101                           ;put on the final sign bit
+   102   0006BE  0E01               	movlw	1	; WREG = 1
+   103   0006C0  6230               	cpfseq	48,c	; skip if final sign bit is 1(should be negavtive)
+   104   0006C2  0012               	return		; is 0
+   105                           
+   106                           ;do two's complement for output(16 bit)
+   107                           ;high 8 bits: 1's complement
+   108   0006C4  1E02               	comf	2,f,c
+   109                           
+   110                           ;high 8 bits: 2's complement
+   111   0006C6  6C01               	negf	1,c
+   112                           
+   113                           ;judge carry
+   114   0006C8  B0D8               	btfsc	status,0,c	; skip if carry flag == 0 (no carry)
+   115   0006CA  2A01               	incf	1,f,c	; ++
+   116   0006CC  0012               	return	
+   117                           tosu	equ	0xFFF
+   118                           tosh	equ	0xFFE
+   119                           tosl	equ	0xFFD
+   120                           stkptr	equ	0xFFC
+   121                           pclatu	equ	0xFFB
+   122                           pclath	equ	0xFFA
+   123                           pcl	equ	0xFF9
+   124                           tblptru	equ	0xFF8
+   125                           tblptrh	equ	0xFF7
+   126                           tblptrl	equ	0xFF6
+   127                           tablat	equ	0xFF5
+   128                           prodh	equ	0xFF4
+   129                           prodl	equ	0xFF3
+   130                           indf0	equ	0xFEF
+   131                           postinc0	equ	0xFEE
+   132                           postdec0	equ	0xFED
+   133                           preinc0	equ	0xFEC
+   134                           plusw0	equ	0xFEB
+   135                           fsr0h	equ	0xFEA
+   136                           fsr0l	equ	0xFE9
+   137                           wreg	equ	0xFE8
+   138                           indf1	equ	0xFE7
+   139                           postinc1	equ	0xFE6
+   140                           postdec1	equ	0xFE5
+   141                           preinc1	equ	0xFE4
+   142                           plusw1	equ	0xFE3
+   143                           fsr1h	equ	0xFE2
+   144                           fsr1l	equ	0xFE1
+   145                           bsr	equ	0xFE0
+   146                           indf2	equ	0xFDF
+   147                           postinc2	equ	0xFDE
+   148                           postdec2	equ	0xFDD
+   149                           preinc2	equ	0xFDC
+   150                           plusw2	equ	0xFDB
+   151                           fsr2h	equ	0xFDA
+   152                           fsr2l	equ	0xFD9
+   153                           status	equ	0xFD8
+
+
+Microchip Technology PIC18 Macro Assembler V2.45 build 20230818022343 
+Symbol Table                                                                                               Thu Oct 19 04:00:23 2023
+
+                        WREG 0FE8                          loop 0696                  Counter_addr 0020  
+            Output_8_15_addr 0002                        STATUS 0FD8      Multiplicand_exceed_addr 0010  
+                     isa$std 0001             Multiplicand_addr 0011                      no_carry 06A4  
+             Output_0_7_addr 0001               Multiplier_addr 0012                 Sign_bit_addr 0030  
+                   isa$xinst 0000                    skip_macro 06AA                 _multi_signed 0674  
