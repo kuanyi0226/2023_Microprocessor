@@ -96,7 +96,7 @@ two_complement:
     NEGF Output_0_7_addr
     ;judge carry
     BTFSC STATUS, 0; skip if carry flag == 0 (no carry)
-    INCF Output_0_7_addr; ++
+    INCF Output_8_15_addr; ++
     
 finish:
     RETURN

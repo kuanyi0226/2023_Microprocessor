@@ -57,17 +57,17 @@ OBJECTDIR=build/${CND_CONF}/${IMAGE_TYPE}
 DISTDIR=dist/${CND_CONF}/${IMAGE_TYPE}
 
 # Source Files Quoted if spaced
-SOURCEFILES_QUOTED_IF_SPACED=main.c add.asm is_square.asm multi_signed.asm lcm.asm
+SOURCEFILES_QUOTED_IF_SPACED=main.c
 
 # Object Files Quoted if spaced
-OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/main.p1 ${OBJECTDIR}/add.o ${OBJECTDIR}/is_square.o ${OBJECTDIR}/multi_signed.o ${OBJECTDIR}/lcm.o
-POSSIBLE_DEPFILES=${OBJECTDIR}/main.p1.d ${OBJECTDIR}/add.o.d ${OBJECTDIR}/is_square.o.d ${OBJECTDIR}/multi_signed.o.d ${OBJECTDIR}/lcm.o.d
+OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/main.p1
+POSSIBLE_DEPFILES=${OBJECTDIR}/main.p1.d
 
 # Object Files
-OBJECTFILES=${OBJECTDIR}/main.p1 ${OBJECTDIR}/add.o ${OBJECTDIR}/is_square.o ${OBJECTDIR}/multi_signed.o ${OBJECTDIR}/lcm.o
+OBJECTFILES=${OBJECTDIR}/main.p1
 
 # Source Files
-SOURCEFILES=main.c add.asm is_square.asm multi_signed.asm lcm.asm
+SOURCEFILES=main.c
 
 
 CFLAGS=
@@ -115,71 +115,7 @@ endif
 # ------------------------------------------------------------------------------------
 # Rules for buildStep: assemble
 ifeq ($(TYPE_IMAGE), DEBUG_RUN)
-${OBJECTDIR}/add.o: add.asm  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} "${OBJECTDIR}" 
-	@${RM} ${OBJECTDIR}/add.o.d 
-	@${RM} ${OBJECTDIR}/add.o 
-	${MP_CC} -c $(MP_EXTRA_AS_PRE) -mcpu=$(MP_PROCESSOR_OPTION)  -D__DEBUG=1  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto   -o ${OBJECTDIR}/add.o  add.asm 
-	@-${MV} ${OBJECTDIR}/add.d ${OBJECTDIR}/add.o.d 
-	@${FIXDEPS} ${OBJECTDIR}/add.o.d $(SILENT) -rsi ${MP_CC_DIR}../  
-	
-${OBJECTDIR}/is_square.o: is_square.asm  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} "${OBJECTDIR}" 
-	@${RM} ${OBJECTDIR}/is_square.o.d 
-	@${RM} ${OBJECTDIR}/is_square.o 
-	${MP_CC} -c $(MP_EXTRA_AS_PRE) -mcpu=$(MP_PROCESSOR_OPTION)  -D__DEBUG=1  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto   -o ${OBJECTDIR}/is_square.o  is_square.asm 
-	@-${MV} ${OBJECTDIR}/is_square.d ${OBJECTDIR}/is_square.o.d 
-	@${FIXDEPS} ${OBJECTDIR}/is_square.o.d $(SILENT) -rsi ${MP_CC_DIR}../  
-	
-${OBJECTDIR}/multi_signed.o: multi_signed.asm  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} "${OBJECTDIR}" 
-	@${RM} ${OBJECTDIR}/multi_signed.o.d 
-	@${RM} ${OBJECTDIR}/multi_signed.o 
-	${MP_CC} -c $(MP_EXTRA_AS_PRE) -mcpu=$(MP_PROCESSOR_OPTION)  -D__DEBUG=1  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto   -o ${OBJECTDIR}/multi_signed.o  multi_signed.asm 
-	@-${MV} ${OBJECTDIR}/multi_signed.d ${OBJECTDIR}/multi_signed.o.d 
-	@${FIXDEPS} ${OBJECTDIR}/multi_signed.o.d $(SILENT) -rsi ${MP_CC_DIR}../  
-	
-${OBJECTDIR}/lcm.o: lcm.asm  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} "${OBJECTDIR}" 
-	@${RM} ${OBJECTDIR}/lcm.o.d 
-	@${RM} ${OBJECTDIR}/lcm.o 
-	${MP_CC} -c $(MP_EXTRA_AS_PRE) -mcpu=$(MP_PROCESSOR_OPTION)  -D__DEBUG=1  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto   -o ${OBJECTDIR}/lcm.o  lcm.asm 
-	@-${MV} ${OBJECTDIR}/lcm.d ${OBJECTDIR}/lcm.o.d 
-	@${FIXDEPS} ${OBJECTDIR}/lcm.o.d $(SILENT) -rsi ${MP_CC_DIR}../  
-	
 else
-${OBJECTDIR}/add.o: add.asm  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} "${OBJECTDIR}" 
-	@${RM} ${OBJECTDIR}/add.o.d 
-	@${RM} ${OBJECTDIR}/add.o 
-	${MP_CC} -c $(MP_EXTRA_AS_PRE) -mcpu=$(MP_PROCESSOR_OPTION)  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto   -o ${OBJECTDIR}/add.o  add.asm 
-	@-${MV} ${OBJECTDIR}/add.d ${OBJECTDIR}/add.o.d 
-	@${FIXDEPS} ${OBJECTDIR}/add.o.d $(SILENT) -rsi ${MP_CC_DIR}../  
-	
-${OBJECTDIR}/is_square.o: is_square.asm  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} "${OBJECTDIR}" 
-	@${RM} ${OBJECTDIR}/is_square.o.d 
-	@${RM} ${OBJECTDIR}/is_square.o 
-	${MP_CC} -c $(MP_EXTRA_AS_PRE) -mcpu=$(MP_PROCESSOR_OPTION)  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto   -o ${OBJECTDIR}/is_square.o  is_square.asm 
-	@-${MV} ${OBJECTDIR}/is_square.d ${OBJECTDIR}/is_square.o.d 
-	@${FIXDEPS} ${OBJECTDIR}/is_square.o.d $(SILENT) -rsi ${MP_CC_DIR}../  
-	
-${OBJECTDIR}/multi_signed.o: multi_signed.asm  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} "${OBJECTDIR}" 
-	@${RM} ${OBJECTDIR}/multi_signed.o.d 
-	@${RM} ${OBJECTDIR}/multi_signed.o 
-	${MP_CC} -c $(MP_EXTRA_AS_PRE) -mcpu=$(MP_PROCESSOR_OPTION)  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto   -o ${OBJECTDIR}/multi_signed.o  multi_signed.asm 
-	@-${MV} ${OBJECTDIR}/multi_signed.d ${OBJECTDIR}/multi_signed.o.d 
-	@${FIXDEPS} ${OBJECTDIR}/multi_signed.o.d $(SILENT) -rsi ${MP_CC_DIR}../  
-	
-${OBJECTDIR}/lcm.o: lcm.asm  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} "${OBJECTDIR}" 
-	@${RM} ${OBJECTDIR}/lcm.o.d 
-	@${RM} ${OBJECTDIR}/lcm.o 
-	${MP_CC} -c $(MP_EXTRA_AS_PRE) -mcpu=$(MP_PROCESSOR_OPTION)  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto   -o ${OBJECTDIR}/lcm.o  lcm.asm 
-	@-${MV} ${OBJECTDIR}/lcm.d ${OBJECTDIR}/lcm.o.d 
-	@${FIXDEPS} ${OBJECTDIR}/lcm.o.d $(SILENT) -rsi ${MP_CC_DIR}../  
-	
 endif
 
 # ------------------------------------------------------------------------------------

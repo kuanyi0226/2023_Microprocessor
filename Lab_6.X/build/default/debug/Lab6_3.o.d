@@ -1,0 +1,3 @@
+build/default/debug/Lab6_3.o:  \
+	C:/Users/KuanYi/MPLABXProjects/Lab_6.X/Lab6_3.asm  \
+
