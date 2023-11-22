@@ -1,0 +1,6 @@
+Warning[205] C:\USERS\KUANYI\MPLABXPROJECTS\USUAL_MACRO.X\SUB_SIXTEEN.ASM 1 : Found directive in column 1. (List)
+Warning[207] C:\USERS\KUANYI\MPLABXPROJECTS\USUAL_MACRO.X\SUB_SIXTEEN.ASM 7 : Found label after column 1. (input_1_h)
+Warning[207] C:\USERS\KUANYI\MPLABXPROJECTS\USUAL_MACRO.X\SUB_SIXTEEN.ASM 8 : Found label after column 1. (input_1_l)
+Warning[207] C:\USERS\KUANYI\MPLABXPROJECTS\USUAL_MACRO.X\SUB_SIXTEEN.ASM 9 : Found label after column 1. (input_2_h)
+Warning[207] C:\USERS\KUANYI\MPLABXPROJECTS\USUAL_MACRO.X\SUB_SIXTEEN.ASM 10 : Found label after column 1. (input_2_l)
+Warning[205] C:\USERS\KUANYI\MPLABXPROJECTS\USUAL_MACRO.X\SUB_SIXTEEN.ASM 39 : Found directive in column 1. (end)

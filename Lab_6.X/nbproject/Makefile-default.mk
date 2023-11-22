@@ -57,17 +57,17 @@ OBJECTDIR=build/${CND_CONF}/${IMAGE_TYPE}
 DISTDIR=dist/${CND_CONF}/${IMAGE_TYPE}
 
 # Source Files Quoted if spaced
-SOURCEFILES_QUOTED_IF_SPACED=Lab6_3_v2.asm
+SOURCEFILES_QUOTED_IF_SPACED=
 
 # Object Files Quoted if spaced
-OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/Lab6_3_v2.o
-POSSIBLE_DEPFILES=${OBJECTDIR}/Lab6_3_v2.o.d
+OBJECTFILES_QUOTED_IF_SPACED=
+POSSIBLE_DEPFILES=
 
 # Object Files
-OBJECTFILES=${OBJECTDIR}/Lab6_3_v2.o
+OBJECTFILES=
 
 # Source Files
-SOURCEFILES=Lab6_3_v2.asm
+SOURCEFILES=
 
 
 CFLAGS=
@@ -94,23 +94,7 @@ MP_LINKER_DEBUG_OPTION=-r=ROM@0x7DC0:0x7FFF -r=RAM@GPR:0x5F4:0x5FF
 # ------------------------------------------------------------------------------------
 # Rules for buildStep: assemble
 ifeq ($(TYPE_IMAGE), DEBUG_RUN)
-${OBJECTDIR}/Lab6_3_v2.o: Lab6_3_v2.asm  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} "${OBJECTDIR}" 
-	@${RM} ${OBJECTDIR}/Lab6_3_v2.o.d 
-	@${RM} ${OBJECTDIR}/Lab6_3_v2.o 
-	@${FIXDEPS} dummy.d -e "${OBJECTDIR}/Lab6_3_v2.err" $(SILENT) -c ${MP_AS} $(MP_EXTRA_AS_PRE) -d__DEBUG  -q -p$(MP_PROCESSOR_OPTION)  -l\"${OBJECTDIR}/Lab6_3_v2.lst\" -e\"${OBJECTDIR}/Lab6_3_v2.err\" $(ASM_OPTIONS)    -o\"${OBJECTDIR}/Lab6_3_v2.o\" \"Lab6_3_v2.asm\" 
-	@${DEP_GEN} -d "${OBJECTDIR}/Lab6_3_v2.o"
-	@${FIXDEPS} "${OBJECTDIR}/Lab6_3_v2.o.d" $(SILENT) -rsi ${MP_AS_DIR} -c18 
-	
 else
-${OBJECTDIR}/Lab6_3_v2.o: Lab6_3_v2.asm  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} "${OBJECTDIR}" 
-	@${RM} ${OBJECTDIR}/Lab6_3_v2.o.d 
-	@${RM} ${OBJECTDIR}/Lab6_3_v2.o 
-	@${FIXDEPS} dummy.d -e "${OBJECTDIR}/Lab6_3_v2.err" $(SILENT) -c ${MP_AS} $(MP_EXTRA_AS_PRE) -q -p$(MP_PROCESSOR_OPTION)  -l\"${OBJECTDIR}/Lab6_3_v2.lst\" -e\"${OBJECTDIR}/Lab6_3_v2.err\" $(ASM_OPTIONS)    -o\"${OBJECTDIR}/Lab6_3_v2.o\" \"Lab6_3_v2.asm\" 
-	@${DEP_GEN} -d "${OBJECTDIR}/Lab6_3_v2.o"
-	@${FIXDEPS} "${OBJECTDIR}/Lab6_3_v2.o.d" $(SILENT) -rsi ${MP_AS_DIR} -c18 
-	
 endif
 
 # ------------------------------------------------------------------------------------

@@ -1,0 +1,56 @@
+MPLINK 5.09, LINKER
+Linker Map File - Created Thu Nov 09 21:41:09 2023
+
+                                 Section Info
+                  Section       Type    Address   Location Size(Bytes)
+                ---------  ---------  ---------  ---------  ---------
+                   .org_0       code   0x000000    program   0x0000bc
+                   .cinit    romdata   0x0000bc    program   0x000002
+.config_300001_BUILD/DEFAULT/DEBUG/SIGNED_DIVSI    romdata   0x300001    program   0x000001
+.config_300003_BUILD/DEFAULT/DEBUG/SIGNED_DIVSI    romdata   0x300003    program   0x000001
+
+
+
+                              Program Memory Usage 
+                               Start         End      
+                           ---------   ---------      
+                            0x000000    0x0000bd      
+                            0x300001    0x300001      
+                            0x300003    0x300003      
+            192 out of 33048 program addresses used, program memory utilization is 0%
+
+
+
+                              Symbols - Sorted by Name
+                     Name    Address   Location    Storage File                     
+                ---------  ---------  ---------  --------- ---------                
+             compare_high   0x000056    program     static C:\Users\KuanYi\MPLABXProjects\Usual_Macro.X\signed_divsion.asm
+              compare_low   0x000072    program     static C:\Users\KuanYi\MPLABXProjects\Usual_Macro.X\signed_divsion.asm
+              divide_loop   0x000056    program     static C:\Users\KuanYi\MPLABXProjects\Usual_Macro.X\signed_divsion.asm
+               end_negate   0x000056    program     static C:\Users\KuanYi\MPLABXProjects\Usual_Macro.X\signed_divsion.asm
+  judge_high_equal_bigger   0x000064    program     static C:\Users\KuanYi\MPLABXProjects\Usual_Macro.X\signed_divsion.asm
+           judge_negate_y   0x000044    program     static C:\Users\KuanYi\MPLABXProjects\Usual_Macro.X\signed_divsion.asm
+           macro_not_skip   0x00001a    program     static C:\Users\KuanYi\MPLABXProjects\Usual_Macro.X\signed_divsion.asm
+              minus_16bit   0x000080    program     static C:\Users\KuanYi\MPLABXProjects\Usual_Macro.X\signed_divsion.asm
+                 negate_x   0x00003c    program     static C:\Users\KuanYi\MPLABXProjects\Usual_Macro.X\signed_divsion.asm
+                 negate_y   0x00004e    program     static C:\Users\KuanYi\MPLABXProjects\Usual_Macro.X\signed_divsion.asm
+               skip_macro   0x0000b2    program     static C:\Users\KuanYi\MPLABXProjects\Usual_Macro.X\signed_divsion.asm
+
+
+
+                              Symbols - Sorted by Address
+                     Name    Address   Location    Storage File                     
+                ---------  ---------  ---------  --------- ---------                
+           macro_not_skip   0x00001a    program     static C:\Users\KuanYi\MPLABXProjects\Usual_Macro.X\signed_divsion.asm
+                 negate_x   0x00003c    program     static C:\Users\KuanYi\MPLABXProjects\Usual_Macro.X\signed_divsion.asm
+           judge_negate_y   0x000044    program     static C:\Users\KuanYi\MPLABXProjects\Usual_Macro.X\signed_divsion.asm
+                 negate_y   0x00004e    program     static C:\Users\KuanYi\MPLABXProjects\Usual_Macro.X\signed_divsion.asm
+             compare_high   0x000056    program     static C:\Users\KuanYi\MPLABXProjects\Usual_Macro.X\signed_divsion.asm
+              divide_loop   0x000056    program     static C:\Users\KuanYi\MPLABXProjects\Usual_Macro.X\signed_divsion.asm
+               end_negate   0x000056    program     static C:\Users\KuanYi\MPLABXProjects\Usual_Macro.X\signed_divsion.asm
+  judge_high_equal_bigger   0x000064    program     static C:\Users\KuanYi\MPLABXProjects\Usual_Macro.X\signed_divsion.asm
+              compare_low   0x000072    program     static C:\Users\KuanYi\MPLABXProjects\Usual_Macro.X\signed_divsion.asm
+              minus_16bit   0x000080    program     static C:\Users\KuanYi\MPLABXProjects\Usual_Macro.X\signed_divsion.asm
+               skip_macro   0x0000b2    program     static C:\Users\KuanYi\MPLABXProjects\Usual_Macro.X\signed_divsion.asm
+
+

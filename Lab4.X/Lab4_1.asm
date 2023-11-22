@@ -36,7 +36,7 @@ List p=18f4520
 	    ADDWF 0x00, 1; [0x00] = [0x00] + WREG(0x20)
 	    
 	    
-	    ;multiply
+	    ;multiply: signed 8-bit multiplication
 	    step1: ; multiply two operands disregarding their signs
 	    MOVF 0x00, W; WREG = [0x00] = op1
 	    MULWF 0x01, W; WREG = WREG*[0x01]    (op1*op2)

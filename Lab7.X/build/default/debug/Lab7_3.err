@@ -1,0 +1,10 @@
+Warning[207] C:\USERS\KUANYI\MPLABXPROJECTS\LAB7.X\LAB7_3.ASM 59 : Found label after column 1. (COUNTER)
+Warning[207] C:\USERS\KUANYI\MPLABXPROJECTS\LAB7.X\LAB7_3.ASM 60 : Found label after column 1. (COUNT_DOWN)
+Warning[203] C:\USERS\KUANYI\MPLABXPROJECTS\LAB7.X\LAB7_3.ASM 62 : Found opcode in column 1. (goto)
+Warning[207] C:\USERS\KUANYI\MPLABXPROJECTS\LAB7.X\LAB7_3.ASM 76 : Found label after column 1. (turn_to_sec_0.25)
+Warning[207] C:\USERS\KUANYI\MPLABXPROJECTS\LAB7.X\LAB7_3.ASM 80 : Found label after column 1. (double_sec)
+Warning[207] C:\USERS\KUANYI\MPLABXPROJECTS\LAB7.X\LAB7_3.ASM 87 : Found label after column 1. (judge_up_down)
+Warning[207] C:\USERS\KUANYI\MPLABXPROJECTS\LAB7.X\LAB7_3.ASM 93 : Found label after column 1. (mirror_the_counter)
+Warning[207] C:\USERS\KUANYI\MPLABXPROJECTS\LAB7.X\LAB7_3.ASM 105 : Found label after column 1. (end_isr)
+Warning[202] C:\USERS\KUANYI\MPLABXPROJECTS\LAB7.X\LAB7_3.ASM 133 : Argument out of range.  Least significant bits used.
+Warning[205] C:\USERS\KUANYI\MPLABXPROJECTS\LAB7.X\LAB7_3.ASM 141 : Found directive in column 1. (end)

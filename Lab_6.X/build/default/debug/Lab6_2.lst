@@ -1,4 +1,4 @@
-MPASM 5.84                        LAB6_2.ASM   10-25-2023  20:36:35         PAGE  1
+MPASM 5.84                        LAB6_2.ASM   10-26-2023  15:35:34         PAGE  1
 
 
 LOC  OBJECT CODE     LINE SOURCE TEXT
@@ -57,7 +57,7 @@ Warning[205]: Found directive in column 1. (endm)
 000000                00037 int:
                       00038 ; let pin can receive digital signal 
 Warning[203]: Found opcode in column 1. (MOVLW)
-MPASM 5.84                        LAB6_2.ASM   10-25-2023  20:36:35         PAGE  2
+MPASM 5.84                        LAB6_2.ASM   10-26-2023  15:35:34         PAGE  2
 
 
 LOC  OBJECT CODE     LINE SOURCE TEXT
@@ -116,7 +116,7 @@ Warning[207]: Found label after column 1. (LOOP1)
 Warning[207]: Found label after column 1. (judge_again)
 00003E                00063     judge_again:
                       00064         ;judge whether it is in state 1(output = 0000)
-MPASM 5.84                        LAB6_2.ASM   10-25-2023  20:36:35         PAGE  3
+MPASM 5.84                        LAB6_2.ASM   10-26-2023  15:35:34         PAGE  3
 
 
 LOC  OBJECT CODE     LINE SOURCE TEXT
@@ -160,7 +160,7 @@ Warning[207]: Found label after column 1. (LOOP1)
 000070 D???           00077         BRA lightup
 Warning[205]: Found directive in column 1. (end)
                       00078 end
-MPASM 5.84                        LAB6_2.ASM   10-25-2023  20:36:35         PAGE  4
+MPASM 5.84                        LAB6_2.ASM   10-26-2023  15:35:34         PAGE  4
 
 
 SYMBOL TABLE
@@ -219,7 +219,7 @@ BCLIP                             00000003
 BF                                00000000
 BGST                              00000005
 BOR                               00000000
-MPASM 5.84                        LAB6_2.ASM   10-25-2023  20:36:35         PAGE  5
+MPASM 5.84                        LAB6_2.ASM   10-26-2023  15:35:34         PAGE  5
 
 
 SYMBOL TABLE
@@ -278,7 +278,7 @@ CLKO                              00000006
 CM0                               00000000
 CM1                               00000001
 CM2                               00000002
-MPASM 5.84                        LAB6_2.ASM   10-25-2023  20:36:35         PAGE  6
+MPASM 5.84                        LAB6_2.ASM   10-26-2023  15:35:34         PAGE  6
 
 
 SYMBOL TABLE
@@ -337,7 +337,7 @@ FLTS                              00000002
 FREE                              00000004
 FSR0                              00000000
 FSR0H                             00000FEA
-MPASM 5.84                        LAB6_2.ASM   10-25-2023  20:36:35         PAGE  7
+MPASM 5.84                        LAB6_2.ASM   10-26-2023  15:35:34         PAGE  7
 
 
 SYMBOL TABLE
@@ -396,7 +396,7 @@ INT2P                             00000007
 INTCON                            00000FF2
 INTCON2                           00000FF1
 INTCON3                           00000FF0
-MPASM 5.84                        LAB6_2.ASM   10-25-2023  20:36:35         PAGE  8
+MPASM 5.84                        LAB6_2.ASM   10-26-2023  15:35:34         PAGE  8
 
 
 SYMBOL TABLE
@@ -455,7 +455,7 @@ LATD2                             00000002
 LATD3                             00000003
 LATD4                             00000004
 LATD5                             00000005
-MPASM 5.84                        LAB6_2.ASM   10-25-2023  20:36:35         PAGE  9
+MPASM 5.84                        LAB6_2.ASM   10-26-2023  15:35:34         PAGE  9
 
 
 SYMBOL TABLE
@@ -514,7 +514,7 @@ OSTS                              00000003
 OV                                00000003
 P                                 00000004
 P1A                               00000002
-MPASM 5.84                        LAB6_2.ASM   10-25-2023  20:36:35         PAGE 10
+MPASM 5.84                        LAB6_2.ASM   10-26-2023  15:35:34         PAGE 10
 
 
 SYMBOL TABLE
@@ -573,7 +573,7 @@ PREINC1                           00000FE4
 PREINC2                           00000FDC
 PROD                              00000FF3
 PRODH                             00000FF4
-MPASM 5.84                        LAB6_2.ASM   10-25-2023  20:36:35         PAGE 11
+MPASM 5.84                        LAB6_2.ASM   10-26-2023  15:35:34         PAGE 11
 
 
 SYMBOL TABLE
@@ -632,7 +632,7 @@ RCEN                              00000003
 RCIDL                             00000006
 RCIE                              00000005
 RCIF                              00000005
-MPASM 5.84                        LAB6_2.ASM   10-25-2023  20:36:35         PAGE 12
+MPASM 5.84                        LAB6_2.ASM   10-26-2023  15:35:34         PAGE 12
 
 
 SYMBOL TABLE
@@ -691,7 +691,7 @@ SS                                00000005
 SSPADD                            00000FC8
 SSPBUF                            00000FC9
 SSPCON1                           00000FC6
-MPASM 5.84                        LAB6_2.ASM   10-25-2023  20:36:35         PAGE 13
+MPASM 5.84                        LAB6_2.ASM   10-26-2023  15:35:34         PAGE 13
 
 
 SYMBOL TABLE
@@ -750,7 +750,7 @@ T3CCP2                            00000006
 T3CKPS0                           00000004
 T3CKPS1                           00000005
 T3CON                             00000FB1
-MPASM 5.84                        LAB6_2.ASM   10-25-2023  20:36:35         PAGE 14
+MPASM 5.84                        LAB6_2.ASM   10-26-2023  15:35:34         PAGE 14
 
 
 SYMBOL TABLE
@@ -809,7 +809,7 @@ TRISA5                            00000005
 TRISA6                            00000006
 TRISA7                            00000007
 TRISB                             00000F93
-MPASM 5.84                        LAB6_2.ASM   10-25-2023  20:36:35         PAGE 15
+MPASM 5.84                        LAB6_2.ASM   10-26-2023  15:35:34         PAGE 15
 
 
 SYMBOL TABLE
@@ -868,7 +868,7 @@ VDIRMAG                           00000007
 VPP                               00000003
 VREFN                             00000002
 VREFP                             00000003
-MPASM 5.84                        LAB6_2.ASM   10-25-2023  20:36:35         PAGE 16
+MPASM 5.84                        LAB6_2.ASM   10-26-2023  15:35:34         PAGE 16
 
 
 SYMBOL TABLE
@@ -927,7 +927,7 @@ _EBTR1_ON_7L                      000000FD
 _EBTR2_OFF_7L                     000000FF
 _EBTR2_ON_7L                      000000FB
 _EBTR3_OFF_7L                     000000FF
-MPASM 5.84                        LAB6_2.ASM   10-25-2023  20:36:35         PAGE 17
+MPASM 5.84                        LAB6_2.ASM   10-26-2023  15:35:34         PAGE 17
 
 
 SYMBOL TABLE
@@ -986,7 +986,7 @@ _WDTPS_512_2H                     000000F3
 _WDTPS_64_2H                      000000ED
 _WDTPS_8192_2H                    000000FB
 _WDTPS_8_2H                       000000E7
-MPASM 5.84                        LAB6_2.ASM   10-25-2023  20:36:35         PAGE 18
+MPASM 5.84                        LAB6_2.ASM   10-26-2023  15:35:34         PAGE 18
 
 
 SYMBOL TABLE

@@ -1,0 +1,8 @@
+Warning[205] C:\USERS\KUANYI\MPLABXPROJECTS\MIDTERM_2023.X\1_A.ASM 1 : Found directive in column 1. (List)
+Warning[207] C:\USERS\KUANYI\MPLABXPROJECTS\MIDTERM_2023.X\1_A.ASM 7 : Found label after column 1. (input_n)
+Warning[207] C:\USERS\KUANYI\MPLABXPROJECTS\MIDTERM_2023.X\1_A.ASM 8 : Found label after column 1. (i_addr)
+Warning[207] C:\USERS\KUANYI\MPLABXPROJECTS\MIDTERM_2023.X\1_A.ASM 9 : Found label after column 1. (flag)
+Warning[207] C:\USERS\KUANYI\MPLABXPROJECTS\MIDTERM_2023.X\1_A.ASM 22 : Found label after column 1. (Fib)
+Warning[207] C:\USERS\KUANYI\MPLABXPROJECTS\MIDTERM_2023.X\1_A.ASM 28 : Found label after column 1. (recurr)
+Warning[207] C:\USERS\KUANYI\MPLABXPROJECTS\MIDTERM_2023.X\1_A.ASM 39 : Found label after column 1. (return_1)
+Warning[207] C:\USERS\KUANYI\MPLABXPROJECTS\MIDTERM_2023.X\1_A.ASM 45 : Found label after column 1. (gray_code)

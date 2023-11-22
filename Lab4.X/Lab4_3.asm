@@ -94,7 +94,7 @@ List p=18f4520
 	    ;so if the next step is do right subroutine(which means the situation above happens,
 	    ;we should minus k by 1, before we do right subroutine
     finish:
-	
+	NOP
 	end
 
 

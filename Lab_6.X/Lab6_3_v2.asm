@@ -127,14 +127,3 @@ state2:
 	Judge_State
     
 end
-
-
-
-
-
-
-
-
-
-
-
