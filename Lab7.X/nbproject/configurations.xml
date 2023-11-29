@@ -71,6 +71,14 @@
         </mpasmsuite>
       </item>
       <item path="Lab7_2.asm" ex="true" overriding="false">
+        <MPASMWIN-AS>
+        </MPASMWIN-AS>
+        <MPASMWIN-LD>
+        </MPASMWIN-LD>
+        <mpasmsuite>
+        </mpasmsuite>
+      </item>
+      <item path="Lab7_3.asm" ex="true" overriding="false">
       </item>
       <MPASMWIN-AS>
         <property key="cross.reference.file" value=""/>
