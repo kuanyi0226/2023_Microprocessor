@@ -4904,10 +4904,11 @@ void main(void)
 {
 
     SYSTEM_Initialize() ;
-
+    UART_Write('0');
+    UART_Write(' ');
     while(1) {
         strcpy(str, GetString());
-
+# 30 "main.c"
     }
     return;
 }
@@ -4915,4 +4916,18 @@ void main(void)
 void __attribute__((picinterrupt(("high_priority")))) Hi_ISR(void)
 {
 
+    if(INTCONbits.INT0IF){
+        LATC ++;
+        if(LATC == 16) LATC = 0;
+        if(LATC < 10){
+            UART_Write(LATC +48);
+        }
+        else{
+            UART_Write('1');
+            UART_Write((LATC-10) +48);
+        }
+        UART_Write(' ');
+    }
+    INTCONbits.INT0IF = 0;
+    return;
 }

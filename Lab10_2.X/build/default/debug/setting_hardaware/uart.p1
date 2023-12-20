@@ -595,11 +595,11 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;setting_hardaware/uart.c: 22:     TXSTAbits.SYNC = 0;
 [e = . . _TXSTAbits 0 4 -> -> 0 `i `uc ]
 "23
-[; ;setting_hardaware/uart.c: 23:     BAUDCONbits.BRG16 = 0;
-[e = . . _BAUDCONbits 0 3 -> -> 0 `i `uc ]
-"24
-[; ;setting_hardaware/uart.c: 24:     TXSTAbits.BRGH = 0;
+[; ;setting_hardaware/uart.c: 23:     TXSTAbits.BRGH = 0;
 [e = . . _TXSTAbits 0 2 -> -> 0 `i `uc ]
+"24
+[; ;setting_hardaware/uart.c: 24:     BAUDCONbits.BRG16 = 0;
+[e = . . _BAUDCONbits 0 3 -> -> 0 `i `uc ]
 "25
 [; ;setting_hardaware/uart.c: 25:     SPBRG = 51;
 [e = _SPBRG -> -> 51 `i `uc ]
@@ -630,177 +630,199 @@ Version 4.0 HI-TECH Software Intermediate Code
 "37
 [; ;setting_hardaware/uart.c: 37:     IPR1bits.RCIP = 0;
 [e = . . _IPR1bits 0 5 -> -> 0 `i `uc ]
-"38
-[; ;setting_hardaware/uart.c: 38:     }
+"39
+[; ;setting_hardaware/uart.c: 39:     }
 [e :UE 281 ]
 }
-"40
-[; ;setting_hardaware/uart.c: 40: void UART_Write(unsigned char data)
-[v _UART_Write `(v ~T0 @X0 1 ef1`uc ]
 "41
-[; ;setting_hardaware/uart.c: 41: {
+[; ;setting_hardaware/uart.c: 41: void UART_Write(unsigned char data)
+[v _UART_Write `(v ~T0 @X0 1 ef1`uc ]
+"42
+[; ;setting_hardaware/uart.c: 42: {
 {
 [e :U _UART_Write ]
-"40
-[; ;setting_hardaware/uart.c: 40: void UART_Write(unsigned char data)
-[v _data `uc ~T0 @X0 1 r1 ]
 "41
-[; ;setting_hardaware/uart.c: 41: {
-[f ]
+[; ;setting_hardaware/uart.c: 41: void UART_Write(unsigned char data)
+[v _data `uc ~T0 @X0 1 r1 ]
 "42
-[; ;setting_hardaware/uart.c: 42:     while(!TXSTAbits.TRMT);
+[; ;setting_hardaware/uart.c: 42: {
+[f ]
+"43
+[; ;setting_hardaware/uart.c: 43:     while(!TXSTAbits.TRMT);
 [e $U 283  ]
 [e :U 284 ]
 [e :U 283 ]
 [e $ ! != -> . . _TXSTAbits 0 1 `i -> 0 `i 284  ]
 [e :U 285 ]
-"43
-[; ;setting_hardaware/uart.c: 43:     TXREG = data;
-[e = _TXREG _data ]
 "44
-[; ;setting_hardaware/uart.c: 44: }
+[; ;setting_hardaware/uart.c: 44:     TXREG = data;
+[e = _TXREG _data ]
+"45
+[; ;setting_hardaware/uart.c: 45:     if(data == '\r'){
+[e $ ! == -> _data `ui -> 13 `ui 286  ]
+{
+"46
+[; ;setting_hardaware/uart.c: 46:         while(!TXSTAbits.TRMT);
+[e $U 287  ]
+[e :U 288 ]
+[e :U 287 ]
+[e $ ! != -> . . _TXSTAbits 0 1 `i -> 0 `i 288  ]
+[e :U 289 ]
+"47
+[; ;setting_hardaware/uart.c: 47:         TXREG = '\n';
+[e = _TXREG -> -> 10 `ui `uc ]
+"48
+[; ;setting_hardaware/uart.c: 48:     }
+}
+[e :U 286 ]
+"49
+[; ;setting_hardaware/uart.c: 49: }
 [e :UE 282 ]
 }
-"47
-[; ;setting_hardaware/uart.c: 47: void UART_Write_Text(char* text) {
+"52
+[; ;setting_hardaware/uart.c: 52: void UART_Write_Text(char* text) {
 [v _UART_Write_Text `(v ~T0 @X0 1 ef1`*uc ]
 {
 [e :U _UART_Write_Text ]
 [v _text `*uc ~T0 @X0 1 r1 ]
 [f ]
-"48
-[; ;setting_hardaware/uart.c: 48:     for(int i=0;text[i]!='\0';i++)
+"53
+[; ;setting_hardaware/uart.c: 53:     for(int i=0;text[i]!='\0';i++){
 {
 [v _i `i ~T0 @X0 1 a ]
 [e = _i -> 0 `i ]
-[e $U 290  ]
-[e :U 287 ]
-"49
-[; ;setting_hardaware/uart.c: 49:         UART_Write(text[i]);
+[e $U 294  ]
+[e :U 291 ]
+{
+"54
+[; ;setting_hardaware/uart.c: 54:         UART_Write(text[i]);
 [e ( _UART_Write (1 -> *U + _text * -> _i `x -> -> # *U _text `i `x `uc ]
+"55
+[; ;setting_hardaware/uart.c: 55:     }
+}
 [e ++ _i -> 1 `i ]
-[e :U 290 ]
-[e $ != -> *U + _text * -> _i `x -> -> # *U _text `i `x `ui -> 0 `ui 287  ]
-[e :U 288 ]
+[e :U 294 ]
+[e $ != -> *U + _text * -> _i `x -> -> # *U _text `i `x `ui -> 0 `ui 291  ]
+[e :U 292 ]
 }
-"50
-[; ;setting_hardaware/uart.c: 50: }
-[e :UE 286 ]
+"57
+[; ;setting_hardaware/uart.c: 57: }
+[e :UE 290 ]
 }
-"52
-[; ;setting_hardaware/uart.c: 52: void ClearBuffer(){
+"59
+[; ;setting_hardaware/uart.c: 59: void ClearBuffer(){
 [v _ClearBuffer `(v ~T0 @X0 1 ef ]
 {
 [e :U _ClearBuffer ]
 [f ]
-"53
-[; ;setting_hardaware/uart.c: 53:     for(int i = 0; i < 10 ; i++)
+"60
+[; ;setting_hardaware/uart.c: 60:     for(int i = 0; i < 10 ; i++)
 {
 [v _i `i ~T0 @X0 1 a ]
 [e = _i -> 0 `i ]
-[e $ < _i -> 10 `i 292  ]
-[e $U 293  ]
-[e :U 292 ]
-"54
-[; ;setting_hardaware/uart.c: 54:         mystring[i] = '\0';
+[e $ < _i -> 10 `i 296  ]
+[e $U 297  ]
+[e :U 296 ]
+"61
+[; ;setting_hardaware/uart.c: 61:         mystring[i] = '\0';
 [e = *U + &U _mystring * -> -> _i `ui `ux -> -> # *U &U _mystring `ui `ux -> -> 0 `ui `uc ]
 [e ++ _i -> 1 `i ]
-[e $ < _i -> 10 `i 292  ]
-[e :U 293 ]
+[e $ < _i -> 10 `i 296  ]
+[e :U 297 ]
 }
-"55
-[; ;setting_hardaware/uart.c: 55:     lenStr = 0;
+"62
+[; ;setting_hardaware/uart.c: 62:     lenStr = 0;
 [e = _lenStr -> 0 `i ]
-"56
-[; ;setting_hardaware/uart.c: 56: }
-[e :UE 291 ]
+"63
+[; ;setting_hardaware/uart.c: 63: }
+[e :UE 295 ]
 }
-"58
-[; ;setting_hardaware/uart.c: 58: void MyusartRead()
+"65
+[; ;setting_hardaware/uart.c: 65: void MyusartRead()
 [v _MyusartRead `(v ~T0 @X0 1 ef ]
-"59
-[; ;setting_hardaware/uart.c: 59: {
+"66
+[; ;setting_hardaware/uart.c: 66: {
 {
 [e :U _MyusartRead ]
 [f ]
-"61
-[; ;setting_hardaware/uart.c: 61:     mystring[lenStr] = RCREG;
-[e = *U + &U _mystring * -> -> _lenStr `ui `ux -> -> # *U &U _mystring `ui `ux -> _RCREG `uc ]
-"62
-[; ;setting_hardaware/uart.c: 62:     UART_Write(mystring[lenStr]);
-[e ( _UART_Write (1 -> *U + &U _mystring * -> -> _lenStr `ui `ux -> -> # *U &U _mystring `ui `ux `uc ]
-"63
-[; ;setting_hardaware/uart.c: 63:     lenStr++;
-[e ++ _lenStr -> 1 `i ]
-"64
-[; ;setting_hardaware/uart.c: 64:     lenStr %= 10;
-[e =% _lenStr -> 10 `i ]
-"65
-[; ;setting_hardaware/uart.c: 65:     return ;
-[e $UE 295  ]
-"66
-[; ;setting_hardaware/uart.c: 66: }
-[e :UE 295 ]
-}
 "68
-[; ;setting_hardaware/uart.c: 68: char *GetString(){
+[; ;setting_hardaware/uart.c: 68:     mystring[lenStr] = RCREG;
+[e = *U + &U _mystring * -> -> _lenStr `ui `ux -> -> # *U &U _mystring `ui `ux -> _RCREG `uc ]
+"69
+[; ;setting_hardaware/uart.c: 69:     UART_Write(mystring[lenStr]);
+[e ( _UART_Write (1 -> *U + &U _mystring * -> -> _lenStr `ui `ux -> -> # *U &U _mystring `ui `ux `uc ]
+"70
+[; ;setting_hardaware/uart.c: 70:     lenStr++;
+[e ++ _lenStr -> 1 `i ]
+"71
+[; ;setting_hardaware/uart.c: 71:     lenStr %= 10;
+[e =% _lenStr -> 10 `i ]
+"72
+[; ;setting_hardaware/uart.c: 72:     return ;
+[e $UE 299  ]
+"73
+[; ;setting_hardaware/uart.c: 73: }
+[e :UE 299 ]
+}
+"75
+[; ;setting_hardaware/uart.c: 75: char *GetString(){
 [v _GetString `(*uc ~T0 @X0 1 ef ]
 {
 [e :U _GetString ]
 [f ]
-"69
-[; ;setting_hardaware/uart.c: 69:     return mystring;
+"76
+[; ;setting_hardaware/uart.c: 76:     return mystring;
 [e ) &U _mystring ]
-[e $UE 296  ]
-"70
-[; ;setting_hardaware/uart.c: 70: }
-[e :UE 296 ]
+[e $UE 300  ]
+"77
+[; ;setting_hardaware/uart.c: 77: }
+[e :UE 300 ]
 }
 [v $root$_Lo_ISR `(v ~T0 @X0 0 e ]
-"74
-[; ;setting_hardaware/uart.c: 74: void __attribute__((picinterrupt(("low_priority")))) Lo_ISR(void)
+"81
+[; ;setting_hardaware/uart.c: 81: void __attribute__((picinterrupt(("low_priority")))) Lo_ISR(void)
 [v _Lo_ISR `(v ~T41 @X0 1 ef ]
-"75
-[; ;setting_hardaware/uart.c: 75: {
+"82
+[; ;setting_hardaware/uart.c: 82: {
 {
 [e :U _Lo_ISR ]
 [f ]
-"76
-[; ;setting_hardaware/uart.c: 76:     if(RCIF)
-[e $ ! _RCIF 298  ]
-"77
-[; ;setting_hardaware/uart.c: 77:     {
-{
-"78
-[; ;setting_hardaware/uart.c: 78:         if(RCSTAbits.OERR)
-[e $ ! != -> . . _RCSTAbits 0 1 `i -> 0 `i 299  ]
-"79
-[; ;setting_hardaware/uart.c: 79:         {
-{
-"80
-[; ;setting_hardaware/uart.c: 80:             CREN = 0;
-[e = _CREN -> -> 0 `i `b ]
-"81
-[; ;setting_hardaware/uart.c: 81:             __nop();
-[e ( ___nop ..  ]
-"82
-[; ;setting_hardaware/uart.c: 82:             CREN = 1;
-[e = _CREN -> -> 1 `i `b ]
 "83
-[; ;setting_hardaware/uart.c: 83:         }
-}
-[e :U 299 ]
+[; ;setting_hardaware/uart.c: 83:     if(RCIF)
+[e $ ! _RCIF 302  ]
+"84
+[; ;setting_hardaware/uart.c: 84:     {
+{
 "85
-[; ;setting_hardaware/uart.c: 85:         MyusartRead();
-[e ( _MyusartRead ..  ]
+[; ;setting_hardaware/uart.c: 85:         if(RCSTAbits.OERR)
+[e $ ! != -> . . _RCSTAbits 0 1 `i -> 0 `i 303  ]
 "86
-[; ;setting_hardaware/uart.c: 86:     }
-}
-[e :U 298 ]
+[; ;setting_hardaware/uart.c: 86:         {
+{
+"87
+[; ;setting_hardaware/uart.c: 87:             CREN = 0;
+[e = _CREN -> -> 0 `i `b ]
+"88
+[; ;setting_hardaware/uart.c: 88:             __nop();
+[e ( ___nop ..  ]
 "89
-[; ;setting_hardaware/uart.c: 89:     return;
-[e $UE 297  ]
+[; ;setting_hardaware/uart.c: 89:             CREN = 1;
+[e = _CREN -> -> 1 `i `b ]
 "90
-[; ;setting_hardaware/uart.c: 90: }
-[e :UE 297 ]
+[; ;setting_hardaware/uart.c: 90:         }
+}
+[e :U 303 ]
+"92
+[; ;setting_hardaware/uart.c: 92:         MyusartRead();
+[e ( _MyusartRead ..  ]
+"93
+[; ;setting_hardaware/uart.c: 93:     }
+}
+[e :U 302 ]
+"96
+[; ;setting_hardaware/uart.c: 96:     return;
+[e $UE 301  ]
+"97
+[; ;setting_hardaware/uart.c: 97: }
+[e :UE 301 ]
 }

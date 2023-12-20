@@ -53,6 +53,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 "6724
 [; ;C:\Program Files\Microchip\xc8\v2.45\pic\include\proc\pic18f4520.h: 6724: extern volatile INTCONbits_t INTCONbits __attribute__((address(0xFF2)));
 [v _INTCONbits `VS274 ~T0 @X0 0 e@4082 ]
+"1699
+[; ;C:\Program Files\Microchip\xc8\v2.45\pic\include\proc\pic18f4520.h: 1699: extern volatile unsigned char TRISB __attribute__((address(0xF93)));
+[v _TRISB `Vuc ~T0 @X0 0 e@3987 ]
 "54 C:\Program Files\Microchip\xc8\v2.45\pic\include\proc\pic18f4520.h
 [; ;C:\Program Files\Microchip\xc8\v2.45\pic\include\proc\pic18f4520.h: 54: __asm("PORTA equ 0F80h");
 [; <" PORTA equ 0F80h ;# ">
@@ -484,7 +487,16 @@ Version 4.0 HI-TECH Software Intermediate Code
 "7
 [; ;setting_hardaware/interrupt_manager.c: 7:     INTCONbits.GIEL = 1;
 [e = . . _INTCONbits 2 1 -> -> 1 `i `uc ]
-"8
-[; ;setting_hardaware/interrupt_manager.c: 8: }
+"10
+[; ;setting_hardaware/interrupt_manager.c: 10:     INTCONbits.INT0IF = 0;
+[e = . . _INTCONbits 0 1 -> -> 0 `i `uc ]
+"11
+[; ;setting_hardaware/interrupt_manager.c: 11:     INTCONbits.INT0IE = 1;
+[e = . . _INTCONbits 0 4 -> -> 1 `i `uc ]
+"12
+[; ;setting_hardaware/interrupt_manager.c: 12:     TRISB = 0;
+[e = _TRISB -> -> 0 `i `uc ]
+"13
+[; ;setting_hardaware/interrupt_manager.c: 13: }
 [e :UE 281 ]
 }

@@ -59,6 +59,10 @@
 
 void SYSTEM_Initialize(void)
 {
+    //LED(output)
+    ADCON1 = 0x0f; //digital io
+    TRISCbits.TRISC0 = TRISCbits.TRISC1 = TRISCbits.TRISC2 = TRISCbits.TRISC3 = 0;
+    LATC = 0;
     // PIN_MANAGER_Initialize();
     OSCILLATOR_Initialize(); //default 1Mhz
 //    TMR2_Initialize();
@@ -66,8 +70,8 @@ void SYSTEM_Initialize(void)
 //    TMR0_Initialize();
     INTERRUPT_Initialize();
     UART_Initialize();
-    CCP1_Initialize();
-    ADC_Initialize();
+//    CCP1_Initialize();
+//    ADC_Initialize();
 }
 
 void OSCILLATOR_Initialize(void)

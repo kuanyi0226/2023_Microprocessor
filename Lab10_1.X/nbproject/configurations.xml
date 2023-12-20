@@ -166,6 +166,30 @@
         <property key="stack-type" value="compiled"/>
         <property key="user-pack-device-support" value=""/>
       </XC8-config-global>
+      <item path="main.c" ex="true" overriding="false">
+      </item>
+      <item path="setting_hardaware/adc.c" ex="true" overriding="false">
+      </item>
+      <item path="setting_hardaware/adc.h" ex="true" overriding="false">
+      </item>
+      <item path="setting_hardaware/ccp1.c" ex="true" overriding="false">
+      </item>
+      <item path="setting_hardaware/ccp1.h" ex="true" overriding="false">
+      </item>
+      <item path="setting_hardaware/interrupt_manager.c" ex="true" overriding="false">
+      </item>
+      <item path="setting_hardaware/interrupt_manager.h" ex="true" overriding="false">
+      </item>
+      <item path="setting_hardaware/pin_manager.h" ex="true" overriding="false">
+      </item>
+      <item path="setting_hardaware/setting.c" ex="true" overriding="false">
+      </item>
+      <item path="setting_hardaware/setting.h" ex="true" overriding="false">
+      </item>
+      <item path="setting_hardaware/uart.c" ex="true" overriding="false">
+      </item>
+      <item path="setting_hardaware/uart.h" ex="true" overriding="false">
+      </item>
     </conf>
   </confs>
 </configurationDescriptor>

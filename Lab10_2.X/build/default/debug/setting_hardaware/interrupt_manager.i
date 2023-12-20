@@ -4635,4 +4635,9 @@ void INTERRUPT_Initialize (void)
     RCONbits.IPEN = 1;
     INTCONbits.GIEH = 1;
     INTCONbits.GIEL = 1;
+
+
+    INTCONbits.INT0IF = 0;
+    INTCONbits.INT0IE = 1;
+    TRISB = 0;
 }

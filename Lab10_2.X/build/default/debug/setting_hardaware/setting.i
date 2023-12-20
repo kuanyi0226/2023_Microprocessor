@@ -4739,14 +4739,18 @@ void OSCILLATOR_Initialize(void);
 void SYSTEM_Initialize(void)
 {
 
+    ADCON1 = 0x0f;
+    TRISCbits.TRISC0 = TRISCbits.TRISC1 = TRISCbits.TRISC2 = TRISCbits.TRISC3 = 0;
+    LATC = 0;
+
     OSCILLATOR_Initialize();
 
 
 
     INTERRUPT_Initialize();
     UART_Initialize();
-    CCP1_Initialize();
-    ADC_Initialize();
+
+
 }
 
 void OSCILLATOR_Initialize(void)

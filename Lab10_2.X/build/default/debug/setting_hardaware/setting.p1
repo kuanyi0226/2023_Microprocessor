@@ -1,4 +1,25 @@
 Version 4.0 HI-TECH Software Intermediate Code
+"4690 C:\Program Files\Microchip\xc8\v2.45\pic\include\proc\pic18f4520.h
+[; ;C:\Program Files\Microchip\xc8\v2.45\pic\include\proc\pic18f4520.h: 4690: extern volatile unsigned char ADCON1 __attribute__((address(0xFC1)));
+[v _ADCON1 `Vuc ~T0 @X0 0 e@4033 ]
+"1932
+[; ;C:\Program Files\Microchip\xc8\v2.45\pic\include\proc\pic18f4520.h: 1932:     struct {
+[s S72 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S72 . TRISC0 TRISC1 TRISC2 TRISC3 TRISC4 TRISC5 TRISC6 TRISC7 ]
+"1942
+[; ;C:\Program Files\Microchip\xc8\v2.45\pic\include\proc\pic18f4520.h: 1942:     struct {
+[s S73 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S73 . RC0 RC1 RC2 RC3 RC4 RC5 RC6 RC7 ]
+"1931
+[; ;C:\Program Files\Microchip\xc8\v2.45\pic\include\proc\pic18f4520.h: 1931: typedef union {
+[u S71 `S72 1 `S73 1 ]
+[n S71 . . . ]
+"1953
+[; ;C:\Program Files\Microchip\xc8\v2.45\pic\include\proc\pic18f4520.h: 1953: extern volatile TRISCbits_t TRISCbits __attribute__((address(0xF94)));
+[v _TRISCbits `VS71 ~T0 @X0 0 e@3988 ]
+"1201
+[; ;C:\Program Files\Microchip\xc8\v2.45\pic\include\proc\pic18f4520.h: 1201: extern volatile unsigned char LATC __attribute__((address(0xF8B)));
+[v _LATC `Vuc ~T0 @X0 0 e@3979 ]
 "15 setting_hardaware/setting.h
 [; ;setting_hardaware/setting.h: 15: void OSCILLATOR_Initialize(void);
 [v _OSCILLATOR_Initialize `(v ~T0 @X0 0 ef ]
@@ -8,12 +29,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 "4 setting_hardaware/uart.h
 [; ;setting_hardaware/uart.h: 4: void UART_Initialize(void);
 [v _UART_Initialize `(v ~T0 @X0 0 ef ]
-"6 setting_hardaware/ccp1.h
-[; ;setting_hardaware/ccp1.h: 6: void CCP1_Initialize();
-[v _CCP1_Initialize `(v ~T0 @X0 0 e? ]
-"34 setting_hardaware/adc.h
-[; ;setting_hardaware/adc.h: 34: void ADC_Initialize() ;
-[v _ADC_Initialize `(v ~T0 @X0 0 e? ]
 "7559 C:\Program Files\Microchip\xc8\v2.45\pic\include\proc\pic18f4520.h
 [; ;C:\Program Files\Microchip\xc8\v2.45\pic\include\proc\pic18f4520.h: 7559: extern volatile __bit IRCF2 __attribute__((address(0x7E9E)));
 [v _IRCF2 `Vb ~T0 @X0 0 e@32414 ]
@@ -513,42 +528,45 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U _SYSTEM_Initialize ]
 [f ]
 "63
-[; ;setting_hardaware/setting.c: 63:     OSCILLATOR_Initialize();
-[e ( _OSCILLATOR_Initialize ..  ]
+[; ;setting_hardaware/setting.c: 63:     ADCON1 = 0x0f;
+[e = _ADCON1 -> -> 15 `i `uc ]
+"64
+[; ;setting_hardaware/setting.c: 64:     TRISCbits.TRISC0 = TRISCbits.TRISC1 = TRISCbits.TRISC2 = TRISCbits.TRISC3 = 0;
+[e = . . _TRISCbits 0 0 = . . _TRISCbits 0 1 = . . _TRISCbits 0 2 = . . _TRISCbits 0 3 -> -> 0 `i `uc ]
+"65
+[; ;setting_hardaware/setting.c: 65:     LATC = 0;
+[e = _LATC -> -> 0 `i `uc ]
 "67
-[; ;setting_hardaware/setting.c: 67:     INTERRUPT_Initialize();
-[e ( _INTERRUPT_Initialize ..  ]
-"68
-[; ;setting_hardaware/setting.c: 68:     UART_Initialize();
-[e ( _UART_Initialize ..  ]
-"69
-[; ;setting_hardaware/setting.c: 69:     CCP1_Initialize();
-[e ( _CCP1_Initialize ..  ]
-"70
-[; ;setting_hardaware/setting.c: 70:     ADC_Initialize();
-[e ( _ADC_Initialize ..  ]
+[; ;setting_hardaware/setting.c: 67:     OSCILLATOR_Initialize();
+[e ( _OSCILLATOR_Initialize ..  ]
 "71
-[; ;setting_hardaware/setting.c: 71: }
+[; ;setting_hardaware/setting.c: 71:     INTERRUPT_Initialize();
+[e ( _INTERRUPT_Initialize ..  ]
+"72
+[; ;setting_hardaware/setting.c: 72:     UART_Initialize();
+[e ( _UART_Initialize ..  ]
+"75
+[; ;setting_hardaware/setting.c: 75: }
 [e :UE 281 ]
 }
-"73
-[; ;setting_hardaware/setting.c: 73: void OSCILLATOR_Initialize(void)
+"77
+[; ;setting_hardaware/setting.c: 77: void OSCILLATOR_Initialize(void)
 [v _OSCILLATOR_Initialize `(v ~T0 @X0 1 ef ]
-"74
-[; ;setting_hardaware/setting.c: 74: {
+"78
+[; ;setting_hardaware/setting.c: 78: {
 {
 [e :U _OSCILLATOR_Initialize ]
 [f ]
-"75
-[; ;setting_hardaware/setting.c: 75:     IRCF2 = 1;
+"79
+[; ;setting_hardaware/setting.c: 79:     IRCF2 = 1;
 [e = _IRCF2 -> -> 1 `i `b ]
-"76
-[; ;setting_hardaware/setting.c: 76:     IRCF1 = 1;
-[e = _IRCF1 -> -> 1 `i `b ]
-"77
-[; ;setting_hardaware/setting.c: 77:     IRCF0 = 0;
-[e = _IRCF0 -> -> 0 `i `b ]
 "80
-[; ;setting_hardaware/setting.c: 80: }
+[; ;setting_hardaware/setting.c: 80:     IRCF1 = 1;
+[e = _IRCF1 -> -> 1 `i `b ]
+"81
+[; ;setting_hardaware/setting.c: 81:     IRCF0 = 0;
+[e = _IRCF0 -> -> 0 `i `b ]
+"84
+[; ;setting_hardaware/setting.c: 84: }
 [e :UE 282 ]
 }

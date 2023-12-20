@@ -66,8 +66,10 @@ void SYSTEM_Initialize(void)
 //    TMR0_Initialize();
     INTERRUPT_Initialize();
     UART_Initialize();
-    CCP1_Initialize();
-    ADC_Initialize();
+    //CCP1_Initialize();
+    //ADC_Initialize();
+    
+    
 }
 
 void OSCILLATOR_Initialize(void)

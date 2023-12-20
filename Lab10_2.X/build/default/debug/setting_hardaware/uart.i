@@ -4641,8 +4641,8 @@ void UART_Initialize() {
 
 
     TXSTAbits.SYNC = 0;
-    BAUDCONbits.BRG16 = 0;
     TXSTAbits.BRGH = 0;
+    BAUDCONbits.BRG16 = 0;
     SPBRG = 51;
 
 
@@ -4656,18 +4656,25 @@ void UART_Initialize() {
     IPR1bits.TXIP = 0;
     PIE1bits.RCIE = 1;
     IPR1bits.RCIP = 0;
+
     }
 
 void UART_Write(unsigned char data)
 {
     while(!TXSTAbits.TRMT);
     TXREG = data;
+    if(data == '\r'){
+        while(!TXSTAbits.TRMT);
+        TXREG = '\n';
+    }
 }
 
 
 void UART_Write_Text(char* text) {
-    for(int i=0;text[i]!='\0';i++)
+    for(int i=0;text[i]!='\0';i++){
         UART_Write(text[i]);
+    }
+
 }
 
 void ClearBuffer(){
