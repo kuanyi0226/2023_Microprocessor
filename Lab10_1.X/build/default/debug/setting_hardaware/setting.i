@@ -4738,6 +4738,8 @@ void OSCILLATOR_Initialize(void);
 
 void SYSTEM_Initialize(void)
 {
+    TRISC = 0;
+    LATCbits.LC3 = 1;
 
     OSCILLATOR_Initialize();
 
@@ -4745,8 +4747,10 @@ void SYSTEM_Initialize(void)
 
     INTERRUPT_Initialize();
     UART_Initialize();
-    CCP1_Initialize();
-    ADC_Initialize();
+
+
+
+
 }
 
 void OSCILLATOR_Initialize(void)

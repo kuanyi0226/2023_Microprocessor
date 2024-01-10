@@ -1,4 +1,4 @@
-__S0 7F6 0 ABS 0
+__S0 7D2 0 ABS 0
 __S1 3C 0 ABS 0
 __S4 0 0 ABS 0
 __S5 0 0 ABS 0
@@ -18,6 +18,7 @@ _IRCF2 7E9E 0 ABS 0
 _RCREG FAE 0 ABS 0
 _TRISA F92 0 ABS 0
 __end_of_strcpy 752 0 CODE 0
+_TRISC F94 0 ABS 0
 _TXREG FAD 0 ABS 0
 _SPBRG FAF 0 ABS 0
 __Hirdata 0 0 CODE 0
@@ -60,6 +61,7 @@ __Heeprom_data 0 0 EEDATA 0
 __Leeprom_data 0 0 EEDATA 0
 _PIR1bits F9E 0 ABS 0
 _IPR1bits F9F 0 ABS 0
+_LATCbits F8B 0 ABS 0
 __Hintsave_regs 0 0 BIGRAM 1
 __Lintsave_regs 0 0 BIGRAM 1
 _RCONbits FD0 0 ABS 0
@@ -74,7 +76,6 @@ __Lstruct 0 0 COMRAM 1
 __Hbigdata 0 0 BIGRAM 1
 __Lbigdata 0 0 BIGRAM 1
 __Hmediumconst 0 0 MEDIUMCONST 0
-__end_of_ADC_Initialize 7D0 0 CODE 0
 __Lmediumconst 0 0 MEDIUMCONST 0
 __Hfarbss 0 0 FARRAM 0
 __Lfarbss 0 0 FARRAM 0
@@ -98,7 +99,7 @@ __end_of___awmod 6B2 0 CODE 0
 __Hdata 0 0 ABS 0
 __Ldata 0 0 ABS 0
 isa$std 1 0 ABS 0
-_GetString 7F2 0 CODE 0
+_GetString 7CE 0 CODE 0
 stackhi 0 0 ABS 0
 __Hheap 0 0 HEAP 7
 __Lheap 0 0 HEAP 7
@@ -119,7 +120,7 @@ __Lrbss 0 0 COMRAM 1
 __pintcodelo 18 0 CODE 0
 __Htext 0 0 ABS 0
 __Ltext 0 0 ABS 0
-__end_of_INTERRUPT_Initialize 7EC 0 CODE 0
+__end_of_INTERRUPT_Initialize 7C8 0 CODE 0
 _strcpy 728 0 CODE 0
 ___heap_lo 0 0 ABS 0
 end_of_initialization 79A 0 CODE 0
@@ -163,20 +164,20 @@ __ptext3 752 0 CODE 0
 ___stack_hi 0 0 STACK 2
 __Htext5 0 0 ABS 0
 __Ltext5 0 0 ABS 0
-__ptext4 7DC 0 CODE 0
+__ptext4 7B8 0 CODE 0
 __Htext6 0 0 ABS 0
 __Ltext6 0 0 ABS 0
-__ptext5 7E4 0 CODE 0
-__Htext7 0 0 ABS 0
-__Ltext7 0 0 ABS 0
-__ptext6 7D0 0 CODE 0
+__ptext5 7C0 0 CODE 0
+__ptext6 7CE 0 CODE 0
 __HbssCOMRAM 0 0 ABS 0
 __LbssCOMRAM 0 0 ABS 0
 __Htext8 0 0 ABS 0
 __Ltext8 0 0 ABS 0
-__ptext7 7BA 0 CODE 0
 __pbssCOMRAM 1 0 COMRAM 1
-__ptext8 7F2 0 CODE 0
+__Htext9 0 0 ABS 0
+__Ltext9 0 0 ABS 0
+__ptext8 6B2 0 CODE 0
+__ptext9 602 0 CODE 0
 __Hclrtext 0 0 ABS 0
 __Lclrtext 0 0 ABS 0
 __end_of__initialization 79A 0 CODE 0
@@ -187,8 +188,7 @@ _MyusartRead 6B2 0 CODE 0
 _UART_Write 6EE 0 CODE 0
 __H__absolute__ 0 0 ABS 0
 __L__absolute__ 0 0 ABS 0
-__end_of_GetString 7F6 0 CODE 0
-_CCP1_Initialize 7D0 0 CODE 0
+__end_of_GetString 7D2 0 CODE 0
 __Hidata 0 0 CODE 0
 __Lidata 0 0 CODE 0
 __Hrdata 0 0 COMRAM 1
@@ -198,11 +198,11 @@ _UART_Initialize 752 0 CODE 0
 __Lidloc 0 0 IDLOC 5
 __Hstack 0 0 STACK 2
 __Lstack 0 0 STACK 2
-int_func 7EC 0 CODE 0
+int_func 7C8 0 CODE 0
 ___awmod 602 0 CODE 0
 __Hparam 0 0 COMRAM 1
 __Lparam 0 0 COMRAM 1
-__Hspace_0 7F6 0 ABS 0
+__Hspace_0 7D2 0 ABS 0
 __HcstackCOMRAM 0 0 ABS 0
 __Lspace_0 0 0 ABS 0
 __LcstackCOMRAM 0 0 ABS 0
@@ -211,7 +211,6 @@ __Hspace_1 3C 0 ABS 0
 __Lspace_1 0 0 ABS 0
 __Hsmallconst 602 0 SMALLCONST 0
 __Lsmallconst 600 0 SMALLCONST 0
-__end_of_CCP1_Initialize 7DC 0 CODE 0
 __psmallconst 600 0 SMALLCONST 0
 __Hspace_2 0 0 ABS 0
 __Lspace_2 0 0 ABS 0
@@ -228,34 +227,27 @@ __Lconst 0 0 CONST 0
 __Hspace_4 60000E 0 ABS 0
 __Lspace_4 0 0 ABS 0
 ___stack_lo 0 0 STACK 2
-__end_of_OSCILLATOR_Initialize 7E4 0 CODE 0
-__end_of_SYSTEM_Initialize 7BA 0 CODE 0
-_INTERRUPT_Initialize 7E4 0 CODE 0
+__end_of_OSCILLATOR_Initialize 7C0 0 CODE 0
+__end_of_SYSTEM_Initialize 7B8 0 CODE 0
+_INTERRUPT_Initialize 7C0 0 CODE 0
 __Htext10 0 0 ABS 0
 __Ltext10 0 0 ABS 0
-__ptext10 6B2 0 CODE 0
-__Htext11 0 0 ABS 0
-__Ltext11 0 0 ABS 0
-__ptext11 602 0 CODE 0
-__Htext12 0 0 ABS 0
-__Ltext12 0 0 ABS 0
-__ptext12 6EE 0 CODE 0
+__ptext10 6EE 0 CODE 0
 _ADCON0bits FC2 0 ABS 0
 _ADCON2bits FC0 0 ABS 0
 ___inthi_sp 0 0 STACK 2
 ___awmod@divisor 2D 0 COMRAM 1
 ___intlo_sp 0 0 STACK 2
 _INTCONbits FF2 0 ABS 0
-_ADC_Initialize 7BA 0 CODE 0
 strcpy@dest 38 0 COMRAM 1
-_OSCILLATOR_Initialize 7DC 0 CODE 0
+_OSCILLATOR_Initialize 7B8 0 CODE 0
 __smallconst 600 0 SMALLCONST 0
 __Hreset_vec 4 0 CODE 0
 __Lreset_vec 0 0 CODE 0
 __accesstop 80 0 ABS 0
 __Hintcode_body 0 0 ABS 0
 __Lintcode_body 0 0 ABS 0
-__pintcode_body 7EC 0 CODE 0
+__pintcode_body 7C8 0 CODE 0
 __end_of_UART_Initialize 774 0 CODE 0
 intlevel0 0 0 CODE 0
 intlevel1 0 0 CODE 0
@@ -265,7 +257,7 @@ intlevel3 0 0 CODE 0
 ___inthi_stack_lo 0 0 STACK 2
 start_initialization 78E 0 CODE 0
 ___intlo_stack_lo 0 0 STACK 2
-__end_of_Hi_ISR 7F2 0 CODE 0
+__end_of_Hi_ISR 7CE 0 CODE 0
 __initialization 78E 0 CODE 0
 ___awmod@dividend 2B 0 COMRAM 1
 __activetblptr 0 0 ABS 0
@@ -276,28 +268,28 @@ intcode 8 D CODE 8 0
 intcodelo 18 6F CODE 18 0
 smallconst 600 601 SMALLCONST 600 0
 bssCOMRAM 1 3B COMRAM 1 1
-text11 602 7F5 CODE 602 0
+text9 602 7D1 CODE 602 0
 %locals
 dist/default/debug\Lab10_1.X.debug.o
-C:\Users\KuanYi\AppData\Local\Temp\xcBsgv0.1\driver_tmp_1.s
-1879 78E 0 CODE 0
+C:\Users\KuanYi\AppData\Local\Temp\xcAsoqg.\driver_tmp_1.s
 1881 78E 0 CODE 0
-1884 78E 0 CODE 0
-1902 78E 0 CODE 0
-1903 792 0 CODE 0
-1904 794 0 CODE 0
-1905 794 0 CODE 0
-1906 796 0 CODE 0
-1907 798 0 CODE 0
-1913 79A 0 CODE 0
+1883 78E 0 CODE 0
+1886 78E 0 CODE 0
+1904 78E 0 CODE 0
+1905 792 0 CODE 0
+1906 794 0 CODE 0
+1907 794 0 CODE 0
+1908 796 0 CODE 0
+1909 798 0 CODE 0
 1915 79A 0 CODE 0
-1916 79C 0 CODE 0
-1917 79E 0 CODE 0
-1918 7A0 0 CODE 0
+1917 79A 0 CODE 0
+1918 79C 0 CODE 0
+1919 79E 0 CODE 0
+1920 7A0 0 CODE 0
 main.c
-14 774 0 CODE 0
-17 774 0 CODE 0
-20 778 0 CODE 0
+13 774 0 CODE 0
+16 774 0 CODE 0
+19 778 0 CODE 0
 C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\strcpy.c
 3 728 0 CODE 0
 5 728 0 CODE 0
@@ -305,12 +297,12 @@ C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\strcpy.c
 8 750 0 CODE 0
 setting_hardaware/setting.c
 60 7A4 0 CODE 0
-63 7A4 0 CODE 0
-67 7A8 0 CODE 0
-68 7AC 0 CODE 0
-69 7B0 0 CODE 0
-70 7B4 0 CODE 0
-71 7B8 0 CODE 0
+62 7A4 0 CODE 0
+63 7A8 0 CODE 0
+65 7AA 0 CODE 0
+69 7AE 0 CODE 0
+70 7B2 0 CODE 0
+75 7B6 0 CODE 0
 setting_hardaware/uart.c
 7 752 0 CODE 0
 18 752 0 CODE 0
@@ -330,39 +322,23 @@ setting_hardaware/uart.c
 37 770 0 CODE 0
 39 772 0 CODE 0
 setting_hardaware/setting.c
-73 7DC 0 CODE 0
-75 7DC 0 CODE 0
-76 7DE 0 CODE 0
-77 7E0 0 CODE 0
-80 7E2 0 CODE 0
+77 7B8 0 CODE 0
+79 7B8 0 CODE 0
+80 7BA 0 CODE 0
+81 7BC 0 CODE 0
+84 7BE 0 CODE 0
 setting_hardaware/interrupt_manager.c
-3 7E4 0 CODE 0
-5 7E4 0 CODE 0
-6 7E6 0 CODE 0
-7 7E8 0 CODE 0
-8 7EA 0 CODE 0
-setting_hardaware/ccp1.c
-3 7D0 0 CODE 0
-4 7D0 0 CODE 0
-5 7D2 0 CODE 0
-6 7D6 0 CODE 0
-7 7D8 0 CODE 0
-8 7DA 0 CODE 0
-setting_hardaware/adc.c
-3 7BA 0 CODE 0
-4 7BA 0 CODE 0
-5 7BC 0 CODE 0
-7 7C0 0 CODE 0
-8 7C2 0 CODE 0
-9 7C6 0 CODE 0
-10 7CA 0 CODE 0
-11 7CE 0 CODE 0
+3 7C0 0 CODE 0
+5 7C0 0 CODE 0
+6 7C2 0 CODE 0
+7 7C4 0 CODE 0
+8 7C6 0 CODE 0
 setting_hardaware/uart.c
-75 7F2 0 CODE 0
-76 7F2 0 CODE 0
-77 7F4 0 CODE 0
-C:\Users\KuanYi\AppData\Local\Temp\xcBsgv0.1\driver_tmp_1.s
-2954 18 0 CODE 0
+75 7CE 0 CODE 0
+76 7CE 0 CODE 0
+77 7D0 0 CODE 0
+C:\Users\KuanYi\AppData\Local\Temp\xcAsoqg.\driver_tmp_1.s
+2795 18 0 CODE 0
 setting_hardaware/uart.c
 81 18 0 CODE 0
 83 2E 0 CODE 0
@@ -409,10 +385,10 @@ setting_hardaware/uart.c
 46 714 0 CODE 0
 47 722 0 CODE 0
 49 726 0 CODE 0
-C:\Users\KuanYi\AppData\Local\Temp\xcBsgv0.1\driver_tmp_1.s
-3435 8 0 CODE 0
+C:\Users\KuanYi\AppData\Local\Temp\xcAsoqg.\driver_tmp_1.s
+3276 8 0 CODE 0
 main.c
-33 8 0 CODE 0
+46 8 0 CODE 0
 main.c
-33 7EC 0 CODE 0
-36 7EE 0 CODE 0
+46 7C8 0 CODE 0
+49 7CA 0 CODE 0

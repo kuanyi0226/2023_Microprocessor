@@ -60,7 +60,7 @@
     
 goto Initial			    
 ISR:				
-    org 0x08                ; ????: ?0.5??????interrupt
+    org 0x08                ; interrupt/ 0.5s
     ;change lights: send the mirror of COUNTER to LATA
     CLRF LATA
     INCF COUNTER              
@@ -84,7 +84,7 @@ ISR:
     sec_0.5:
 	MOVWF PR2
     end_isr:
-    BCF PIR1, TMR2IF        ; ??????TMR2IF?? (??flag bit)
+    BCF PIR1, TMR2IF        ; before leave, clear TMR2IF  (flag bit)
     RETFIE
     
 Initial:	
@@ -96,16 +96,16 @@ Initial:
     CLRF LATA
     BSF RCON, IPEN
     BSF INTCON, GIE
-    BCF PIR1, TMR2IF		; ????TIMER2??????????TMR2IF?TMR2IE?TMR2IP?
+    BCF PIR1, TMR2IF		; to use TIMER2: TMR2IF,TMR2IE,TMR2IP
     BSF IPR1, TMR2IP
     BSF PIE1 , TMR2IE
-    MOVLW b'11111111'	        ; ?Prescale?Postscale???1:16???????256??????TIMER2+1
+    MOVLW b'11111111'	        ; ?Prescale?Postscale???1:16.TIMER2+1/per 256 cycles
     MOVWF T2CON		; ???TIMER?????????/4????????
-    MOVLW D'122'		; ???256 * 4 = 1024?cycles???TIMER2 + 1
-    MOVWF PR2			; ??????250khz???Delay 0.5?????????125000cycles??????Interrupt
-				; ??PR2??? 125000 / 1024 = 122.0703125? ???122?
+    MOVLW D'122'		; ???256 * 4 = 1024 cycles???TIMER2 + 1
+    MOVWF PR2			; 250khz: expecting Delay 0.5s, 125000cycles to occur one Interrupt
+				; ??PR2 should be 125000 / 1024 = 122.0703125? around 122
     MOVLW D'00100000'
-    MOVWF OSCCON	        ; ??????????250kHz
+    MOVWF OSCCON	        ; clock 250kHz
     
     
 main:		

@@ -4892,7 +4892,6 @@ void *memccpy (void *restrict, const void *restrict, int, size_t);
 # 4 "main.c" 2
 
 
-
 char str[20];
 void Mode1(){
     return ;
@@ -4907,7 +4906,7 @@ void main(void)
 
     while(1) {
         strcpy(str, GetString());
-# 29 "main.c"
+# 42 "main.c"
     }
     return;
 }

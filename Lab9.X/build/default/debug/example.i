@@ -4949,21 +4949,15 @@ unsigned char counter;
 void __attribute__((picinterrupt(("high_priority"))))H_ISR(){
 
 
-    int value = ADRESL;
+    int value = ADRESH;
 
 
 
-    LATA = value;
+
 
 
     PIR1bits.ADIF = 0;
-
-
-
-
-    ADCON0bits.GO = 1;
-
-
+# 85 "example.c"
     return;
 }
 
@@ -4974,9 +4968,6 @@ void main(void)
     TRISAbits.RA0 = 1;
 
 
-    TRISAbits.RA1 = TRISAbits.RA2 = TRISAbits.RA3 = TRISAbits.RA4 = 0;
-    LATA = 0;
-
     ADCON1bits.VCFG0 = 0;
     ADCON1bits.VCFG1 = 0;
     ADCON1bits.PCFG = 0b1110;
@@ -4984,7 +4975,7 @@ void main(void)
     ADCON2bits.ADCS = 0b000;
     ADCON2bits.ACQT = 0b001;
     ADCON0bits.ADON = 1;
-    ADCON2bits.ADFM = 1;
+    ADCON2bits.ADFM = 0;
 
 
 

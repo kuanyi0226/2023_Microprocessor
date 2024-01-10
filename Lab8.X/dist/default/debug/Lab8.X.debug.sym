@@ -199,7 +199,7 @@ cstackCOMRAM 1 7 COMRAM 1 1
 text0 602 787 CODE 602 0
 %locals
 dist/default/debug\Lab8.X.debug.o
-C:\Users\KuanYi\AppData\Local\Temp\xcAsrv8.\driver_tmp_1.s
+C:\Users\KuanYi\AppData\Local\Temp\xcAs12c.\driver_tmp_1.s
 457 77C 0 CODE 0
 459 77C 0 CODE 0
 462 77C 0 CODE 0
@@ -245,7 +245,7 @@ Lab8_3.c
 143 726 0 CODE 0
 144 72A 0 CODE 0
 147 744 0 CODE 0
-C:\Users\KuanYi\AppData\Local\Temp\xcAsrv8.\driver_tmp_1.s
+C:\Users\KuanYi\AppData\Local\Temp\xcAs12c.\driver_tmp_1.s
 1047 8 0 CODE 0
 Lab8_3.c
 61 8 0 CODE 0

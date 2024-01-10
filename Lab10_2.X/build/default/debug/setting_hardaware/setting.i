@@ -4688,8 +4688,7 @@ __attribute__((__unsupported__("The " "Write_b_eep" " routine is no longer suppo
 unsigned char __t1rd16on(void);
 unsigned char __t3rd16on(void);
 # 33 "C:\\Program Files\\Microchip\\xc8\\v2.45\\pic\\include\\xc.h" 2 3
-# 3 "setting_hardaware/setting.h" 2
-
+# 4 "setting_hardaware/setting.h" 2
 
 
 
@@ -4704,8 +4703,7 @@ void UART_Write(unsigned char data);
 void UART_Write_Text(char* text);
 void ClearBuffer();
 void MyusartRead();
-# 8 "setting_hardaware/setting.h" 2
-
+# 9 "setting_hardaware/setting.h" 2
 # 1 "setting_hardaware/ccp1.h" 1
 
 
@@ -4713,28 +4711,23 @@ void MyusartRead();
 
 
 void CCP1_Initialize();
-# 9 "setting_hardaware/setting.h" 2
-
+# 10 "setting_hardaware/setting.h" 2
 # 1 "setting_hardaware/adc.h" 1
 # 34 "setting_hardaware/adc.h"
 void ADC_Initialize() ;
 int ADC_Read(int channel);
-# 10 "setting_hardaware/setting.h" 2
-
+# 11 "setting_hardaware/setting.h" 2
 # 1 "setting_hardaware/interrupt_manager.h" 1
 
 
 void INTERRUPT_Initialize(void);
-# 11 "setting_hardaware/setting.h" 2
-
-# 1 "setting_hardaware/pin_manager.h" 1
 # 12 "setting_hardaware/setting.h" 2
-
+# 1 "setting_hardaware/pin_manager.h" 1
+# 13 "setting_hardaware/setting.h" 2
 
 void SYSTEM_Initialize(void);
 void OSCILLATOR_Initialize(void);
-# 58 "setting_hardaware/setting.c" 2
-
+# 59 "setting_hardaware/setting.c" 2
 
 void SYSTEM_Initialize(void)
 {

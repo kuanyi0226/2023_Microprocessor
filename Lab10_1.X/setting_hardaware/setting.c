@@ -59,6 +59,8 @@
 
 void SYSTEM_Initialize(void)
 {
+    TRISC = 0;
+    LATCbits.LC3 = 1;
     // PIN_MANAGER_Initialize();
     OSCILLATOR_Initialize(); //default 1Mhz
 //    TMR2_Initialize();

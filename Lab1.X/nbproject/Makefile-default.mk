@@ -57,17 +57,17 @@ OBJECTDIR=build/${CND_CONF}/${IMAGE_TYPE}
 DISTDIR=dist/${CND_CONF}/${IMAGE_TYPE}
 
 # Source Files Quoted if spaced
-SOURCEFILES_QUOTED_IF_SPACED=
+SOURCEFILES_QUOTED_IF_SPACED=signed_divsion.asm
 
 # Object Files Quoted if spaced
-OBJECTFILES_QUOTED_IF_SPACED=
-POSSIBLE_DEPFILES=
+OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/signed_divsion.o
+POSSIBLE_DEPFILES=${OBJECTDIR}/signed_divsion.o.d
 
 # Object Files
-OBJECTFILES=
+OBJECTFILES=${OBJECTDIR}/signed_divsion.o
 
 # Source Files
-SOURCEFILES=
+SOURCEFILES=signed_divsion.asm
 
 
 CFLAGS=
@@ -94,7 +94,23 @@ MP_LINKER_DEBUG_OPTION=
 # ------------------------------------------------------------------------------------
 # Rules for buildStep: assemble
 ifeq ($(TYPE_IMAGE), DEBUG_RUN)
+${OBJECTDIR}/signed_divsion.o: signed_divsion.asm  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/signed_divsion.o.d 
+	@${RM} ${OBJECTDIR}/signed_divsion.o 
+	@${FIXDEPS} dummy.d -e "${OBJECTDIR}/signed_divsion.err" $(SILENT) -c ${MP_AS} $(MP_EXTRA_AS_PRE) -d__DEBUG -d__MPLAB_DEBUGGER_SIMULATOR=1 -q -p$(MP_PROCESSOR_OPTION)  -l\"${OBJECTDIR}/signed_divsion.lst\" -e\"${OBJECTDIR}/signed_divsion.err\" $(ASM_OPTIONS)    -o\"${OBJECTDIR}/signed_divsion.o\" \"signed_divsion.asm\" 
+	@${DEP_GEN} -d "${OBJECTDIR}/signed_divsion.o"
+	@${FIXDEPS} "${OBJECTDIR}/signed_divsion.o.d" $(SILENT) -rsi ${MP_AS_DIR} -c18 
+	
 else
+${OBJECTDIR}/signed_divsion.o: signed_divsion.asm  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/signed_divsion.o.d 
+	@${RM} ${OBJECTDIR}/signed_divsion.o 
+	@${FIXDEPS} dummy.d -e "${OBJECTDIR}/signed_divsion.err" $(SILENT) -c ${MP_AS} $(MP_EXTRA_AS_PRE) -q -p$(MP_PROCESSOR_OPTION)  -l\"${OBJECTDIR}/signed_divsion.lst\" -e\"${OBJECTDIR}/signed_divsion.err\" $(ASM_OPTIONS)    -o\"${OBJECTDIR}/signed_divsion.o\" \"signed_divsion.asm\" 
+	@${DEP_GEN} -d "${OBJECTDIR}/signed_divsion.o"
+	@${FIXDEPS} "${OBJECTDIR}/signed_divsion.o.d" $(SILENT) -rsi ${MP_AS_DIR} -c18 
+	
 endif
 
 # ------------------------------------------------------------------------------------
